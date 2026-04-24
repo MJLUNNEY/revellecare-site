@@ -1,0 +1,124 @@
+/* ============================================================
+   RevelleCare Design Tokens
+   Brand: Deep Teal #0E6B68 · Champagne Gold #C9B89A · Porcelain #F8F7F4
+   ============================================================ */
+
+:root,
+[data-theme="light"] {
+  /* ── Surfaces ─────────────────────────────── */
+  --color-bg:             #F8F7F4;   /* Porcelain Glow */
+  --color-surface:        #FDFCFA;   /* Pure warm white */
+  --color-surface-2:      #F2EFE9;   /* Warm cream offset */
+  --color-surface-teal:   #EAF4F3;   /* Teal tint surface */
+  --color-divider:        #E0DBD3;
+  --color-border:         #D6D0C6;
+
+  /* ── Text ─────────────────────────────────── */
+  --color-text:           #1E2422;   /* Near-black with warm undertone */
+  --color-text-muted:     #6B7370;
+  --color-text-faint:     #A8ADA9;
+  --color-text-inverse:   #F8F7F4;
+  --color-text-gold:      #8A7356;   /* Gold on light bg */
+
+  /* ── Brand Primary — Deep Teal ───────────── */
+  --color-primary:        #0E6B68;
+  --color-primary-hover:  #0A5250;
+  --color-primary-active: #073A38;
+  --color-primary-light:  #D4ECEB;
+  --color-primary-faint:  #EAF4F3;
+
+  /* ── Brand Accent — Champagne Gold ──────── */
+  --color-gold:           #C9B89A;
+  --color-gold-dark:      #A89578;
+  --color-gold-light:     #EDE5D8;
+  --color-gold-deep:      #7A6045;   /* Rich gold for text */
+
+  /* ── Semantic ────────────────────────────── */
+  --color-success:        #2D7A5F;
+  --color-warning:        #8A6020;
+  --color-error:          #9A3040;
+
+  /* ── Radius ──────────────────────────────── */
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ─────────────────────────────── */
+  --shadow-sm:  0 1px 3px rgba(14,35,30,0.06), 0 1px 2px rgba(14,35,30,0.04);
+  --shadow-md:  0 4px 16px rgba(14,35,30,0.08), 0 2px 4px rgba(14,35,30,0.05);
+  --shadow-lg:  0 16px 48px rgba(14,35,30,0.10), 0 4px 8px rgba(14,35,30,0.06);
+  --shadow-xl:  0 32px 64px rgba(14,35,30,0.12);
+
+  /* ── Transitions ─────────────────────────── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition:  200ms var(--ease-out);
+  --transition-slow: 500ms var(--ease-out);
+
+  /* ── Layout ──────────────────────────────── */
+  --content-narrow:  640px;
+  --content-default: 960px;
+  --content-wide:    1200px;
+  --content-full:    100%;
+
+  /* ── Type Scale ──────────────────────────── */
+  --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.82rem + 0.28vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+  --text-xl:   clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+  --text-2xl:  clamp(1.875rem, 1.2rem + 2.5vw, 3.25rem);
+  --text-3xl:  clamp(2.5rem, 1.5rem + 3.5vw, 5rem);
+  --text-hero: clamp(3rem, 1rem + 6vw, 7rem);
+
+  /* ── Spacing ─────────────────────────────── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ── Fonts ───────────────────────────────── */
+  --font-display: 'Cormorant Garamond', 'Cormorant', 'Georgia', serif;
+  --font-body:    'Jost', 'DM Sans', 'Helvetica Neue', sans-serif;
+}
+
+[data-theme="dark"] {
+  --color-bg:             #111714;
+  --color-surface:        #161C19;
+  --color-surface-2:      #1C2420;
+  --color-surface-teal:   #142422;
+  --color-divider:        #262E2A;
+  --color-border:         #2E3830;
+
+  --color-text:           #E8EAE6;
+  --color-text-muted:     #7A8A82;
+  --color-text-faint:     #4A5A52;
+  --color-text-inverse:   #111714;
+  --color-text-gold:      #C9B89A;
+
+  --color-primary:        #3D9E9A;
+  --color-primary-hover:  #52B8B4;
+  --color-primary-active: #6DCECC;
+  --color-primary-light:  #1A3432;
+  --color-primary-faint:  #152A28;
+
+  --color-gold:           #C9B89A;
+  --color-gold-dark:      #A89578;
+  --color-gold-light:     #2A2218;
+  --color-gold-deep:      #D4C4A8;
+
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg:  0 16px 48px rgba(0,0,0,0.5);
+}

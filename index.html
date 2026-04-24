@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RevelleCare — Prescription Skincare for Menopause</title>
+  <meta name="description" content="RevelleCare combines physician-supervised estrogen therapy with modern luxury skincare for women navigating perimenopause and menopause. Science-backed. Beautifully designed." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28' font-family='Georgia,serif' font-style='italic' fill='%230E6B68'>R</text></svg>" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+
+        <a href="/" class="nav-logo" aria-label="RevelleCare home">
+          <span class="nav-logo-mark" aria-hidden="true">R</span>
+          <span class="nav-logo-text">
+            <span class="nav-logo-name">RevelleCare</span>
+            <span class="nav-logo-tagline">Prescription Skincare</span>
+          </span>
+        </a>
+
+        <ul class="nav-menu" role="list" id="nav-menu">
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="pages/science.html">The Science</a></li>
+          <li><a href="pages/products.html">Our Products</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode"></button>
+          <a href="#assessment" class="nav-cta">Start Assessment</a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════ -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-left">
+        <p class="hero-label">Physician-Supervised · Prescription-Led</p>
+
+        <h1 class="hero-headline">
+          Your skin deserves<br>
+          <em>the science</em> of<br>
+          menopause care
+        </h1>
+
+        <p class="hero-sub">
+          RevelleCare merges compounded estrogen therapy with modern luxury skincare — designed for the 12+ million Canadian women navigating perimenopause and menopause.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#assessment" class="btn btn-primary">Begin Your Assessment</a>
+          <a href="pages/science.html" class="btn btn-outline">Explore the Science</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <span class="hero-trust-value">+75%</span>
+            <span class="hero-trust-label">epidermal thickness restored</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-value">+88%</span>
+            <span class="hero-trust-label">skin elasticity improvement</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-value">+38%</span>
+            <span class="hero-trust-label">collagen density increase</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <div class="hero-image-wrap">
+          <img
+            src="images/products.jpg"
+            alt="RevelleCare prescription skincare collection"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="hero-overlay"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         STATS BAR
+    ═══════════════════════════════════════════════ -->
+    <section class="stats-bar" aria-label="Key statistics">
+      <div class="container">
+        <div class="stats-inner">
+          <div class="stat-item reveal">
+            <span class="stat-value">12M+</span>
+            <span class="stat-label">Canadian women in menopause transition</span>
+            <span class="stat-source">Statistics Canada</span>
+          </div>
+          <div class="stat-item reveal reveal-delay-1">
+            <span class="stat-value">61–100%</span>
+            <span class="stat-label">wrinkle reduction with topical estrogen</span>
+            <span class="stat-source">Schmidt et al., 1996</span>
+          </div>
+          <div class="stat-item reveal reveal-delay-2">
+            <span class="stat-value">$70–80</span>
+            <span class="stat-label">per month, physician-supervised</span>
+            <span class="stat-source">CAD · All-inclusive</span>
+          </div>
+          <div class="stat-item reveal reveal-delay-3">
+            <span class="stat-value">Rx</span>
+            <span class="stat-label">compounded by licensed Canadian pharmacy</span>
+            <span class="stat-source">Health Canada compliant</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         HOW IT WORKS
+    ═══════════════════════════════════════════════ -->
+    <section class="how-it-works section" id="how-it-works" aria-labelledby="how-title">
+      <div class="container container--default">
+        <header class="section-header reveal">
+          <p class="section-label">The Process</p>
+          <h2 class="section-title" id="how-title">Prescription skincare,<br><em>beautifully delivered</em></h2>
+          <p class="section-desc">Three simple steps to clinically-formulated care — from your first consultation to your door.</p>
+        </header>
+
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-number" aria-hidden="true"><em>1</em></div>
+            <h3 class="step-title">Complete Your Assessment</h3>
+            <p class="step-desc">Answer a brief intake about your skin, hormonal health, and goals. Our clinical questionnaire screens for candidacy in minutes.</p>
+          </div>
+          <div class="step-card reveal reveal-delay-1">
+            <div class="step-number" aria-hidden="true"><em>2</em></div>
+            <h3 class="step-title">Consult Your Physician</h3>
+            <p class="step-desc">A licensed Canadian physician reviews your profile via telemedicine. If indicated, they prescribe your personalized formulation.</p>
+          </div>
+          <div class="step-card reveal reveal-delay-2">
+            <div class="step-number" aria-hidden="true"><em>3</em></div>
+            <h3 class="step-title">Receive &amp; Renew</h3>
+            <p class="step-desc">Your compounded prescription is dispensed by a licensed pharmacy and delivered to your door. Ongoing monitoring and renewal included.</p>
+          </div>
+        </div>
+
+        <div class="steps-cta reveal" style="text-align:center;margin-top:clamp(2.5rem,5vw,4rem);">
+          <a href="#assessment" class="btn btn-primary">Begin Your Assessment</a>
+          <p style="margin-top:var(--space-4);font-size:var(--text-xs);color:var(--color-text-faint);letter-spacing:0.06em;">Currently available in Ontario &amp; British Columbia</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         PRODUCTS PREVIEW
+    ═══════════════════════════════════════════════ -->
+    <section class="products-preview section" aria-labelledby="products-title">
+      <div class="container container--default">
+        <header class="section-header reveal">
+          <p class="section-label">The Collection</p>
+          <h2 class="section-title" id="products-title">Three formulations,<br><em>one protocol</em></h2>
+          <p class="section-desc">Each product is compounded to pharmaceutical standards, prescribed by a licensed physician, and calibrated for menopausal skin biology.</p>
+        </header>
+
+        <div class="products-grid">
+
+          <!-- Product 1 -->
+          <article class="product-card reveal">
+            <div class="product-card-image">
+              <img src="images/products.jpg" alt="RevelleCare Estrogen Repair Cream" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <span class="product-card-rx">Rx Required</span>
+              <h3 class="product-card-name">Estrogen Repair Cream</h3>
+              <p class="product-card-actives">Estradiol 0.01% · Estriol 0.1%</p>
+              <p class="product-card-desc">Restores epidermal thickness and dermal collagen density. Clinically shown to increase skin thickness by up to 75% and reduce wrinkles by 61–100%.</p>
+              <a href="pages/products.html" class="product-card-link">Learn more <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card reveal reveal-delay-1">
+            <div class="product-card-image">
+              <img src="images/products.jpg" alt="RevelleCare Night Renewal Cream" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <span class="product-card-rx">Rx Required</span>
+              <h3 class="product-card-name">Night Renewal Cream</h3>
+              <p class="product-card-actives">Tretinoin 0.05% · Estriol 0.03%</p>
+              <p class="product-card-desc">Accelerates cellular renewal while estriol supports barrier function. Addresses fine lines, uneven texture, and overnight skin repair simultaneously.</p>
+              <a href="pages/products.html" class="product-card-link">Learn more <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card reveal reveal-delay-2">
+            <div class="product-card-image">
+              <img src="images/products.jpg" alt="RevelleCare Non-Hormonal Repair Cream" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <span class="product-card-rx" style="background:var(--color-gold-light);color:var(--color-gold-deep);border-color:var(--color-gold);">Non-Rx</span>
+              <h3 class="product-card-name">Non-Hormonal Repair Cream</h3>
+              <p class="product-card-actives">Vitamin B3 · Vitamin C · Vitamin E · Peptides</p>
+              <p class="product-card-desc">A high-performance companion for those who prefer non-hormonal support. Antioxidant-rich with collagen-stimulating peptides for visible renewal.</p>
+              <a href="pages/products.html" class="product-card-link">Learn more <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center;margin-top:clamp(2.5rem,5vw,4rem);" class="reveal">
+          <a href="pages/products.html" class="btn btn-outline">View Full Collection</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SCIENCE TEASER
+    ═══════════════════════════════════════════════ -->
+    <section class="science-teaser section" aria-labelledby="science-title">
+      <div class="container container--default">
+        <div class="science-teaser-inner">
+
+          <div class="science-teaser-left reveal">
+            <p class="science-teaser-label">Evidence-Based</p>
+            <h2 class="science-teaser-title" id="science-title">
+              Decades of research.<br>
+              <em>One elegant protocol.</em>
+            </h2>
+            <p class="science-teaser-desc">
+              RevelleCare's formulations are grounded in peer-reviewed clinical science — topical estradiol and estriol are among the most studied actives in dermatology for menopausal skin aging.
+            </p>
+            <a href="pages/science.html" class="btn btn-ghost">Explore the Science</a>
+          </div>
+
+          <div class="evidence-cards reveal reveal-delay-1">
+            <div class="evidence-card">
+              <div class="evidence-stat">+75%</div>
+              <p class="evidence-desc">Increase in epidermal thickness with topical estradiol 0.01%</p>
+              <p class="evidence-study">Moraes et al., 2009</p>
+            </div>
+            <div class="evidence-card">
+              <div class="evidence-stat">61–100%</div>
+              <p class="evidence-desc">Wrinkle reduction with combined estradiol + estriol therapy</p>
+              <p class="evidence-study">Schmidt et al., 1996</p>
+            </div>
+            <div class="evidence-card">
+              <div class="evidence-stat">+88%</div>
+              <p class="evidence-desc">Improvement in skin elasticity with topical estriol 0.3%</p>
+              <p class="evidence-study">Alloy / Draelos, 2024</p>
+            </div>
+            <div class="evidence-card">
+              <div class="evidence-stat">+38%</div>
+              <p class="evidence-desc">Increase in dermal collagen density with estradiol 0.01%</p>
+              <p class="evidence-study">Fuchs et al., 2003</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         ABOUT FOUNDER
+    ═══════════════════════════════════════════════ -->
+    <section class="about-founder section" id="about" aria-labelledby="founder-title">
+      <div class="container container--default">
+        <div class="founder-inner">
+
+          <div class="founder-visual reveal">
+            <div class="founder-monogram" aria-hidden="true">
+              <span class="founder-monogram-r">R</span>
+            </div>
+            <div class="founder-quote-badge" role="complementary">
+              <p class="founder-quote-text">"Where prescription science, modern luxury, and menopause care come together."</p>
+              <p class="founder-quote-attr">— Michele Lunney, Founder &amp; CEO</p>
+            </div>
+          </div>
+
+          <div class="founder-content reveal reveal-delay-1">
+            <p class="founder-label">Our Founder</p>
+            <h2 class="founder-name" id="founder-title">Michele Lunney</h2>
+            <p class="founder-title">Founder &amp; CEO, RevelleCare</p>
+            <p class="founder-bio">
+              With nearly two decades at the intersection of healthcare, innovation, and highly regulated sectors, Michele built her career around growth strategy, commercialization, and high-value partnerships.
+            </p>
+            <p class="founder-bio" style="margin-top:var(--space-4);">
+              She founded RevelleCare to create a new category in women's health — one that finally gives menopausal skin the clinical precision it deserves, wrapped in an experience worthy of the women it serves.
+            </p>
+            <div style="margin-top:var(--space-8);">
+              <a href="#about" class="btn btn-outline">Our Story</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         PERIMENOPAUSE EDUCATION STRIP
+    ═══════════════════════════════════════════════ -->
+    <section class="section section--sm" style="background:var(--color-surface-2);" aria-labelledby="edu-title">
+      <div class="container container--default">
+        <header class="section-header reveal" style="margin-bottom:clamp(var(--space-8),4vw,var(--space-12));">
+          <p class="section-label">Understanding the Transition</p>
+          <h2 class="section-title" id="edu-title">Why skin changes<br><em>during menopause</em></h2>
+        </header>
+        <div class="edu-grid reveal reveal-delay-1">
+          <div class="edu-card">
+            <div class="edu-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M16 8v8l5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="edu-title">Estrogen Decline</h3>
+            <p class="edu-desc">Estrogen is the primary regulator of skin collagen, hydration, and cell turnover. As levels drop during perimenopause, skin loses up to 30% of its collagen in the first five years.</p>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M10 16h12M16 10v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="edu-title">Barrier Disruption</h3>
+            <p class="edu-desc">Reduced estrogen compromises the skin barrier, leading to increased transepidermal water loss, sensitivity, and impaired healing — changes that standard moisturizers cannot fully address.</p>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 24C8 17.373 11.582 12 16 12s8 5.373 8 12" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="edu-title">The Rx Difference</h3>
+            <p class="edu-desc">Only prescription-strength topical estrogen can act on dermal estrogen receptors — the site of collagen synthesis and elastin production. RevelleCare delivers what over-the-counter products simply cannot.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CTA BANNER
+    ═══════════════════════════════════════════════ -->
+    <section class="cta-banner section" id="assessment" aria-labelledby="cta-title">
+      <div class="container container--narrow">
+        <div class="cta-banner-inner">
+          <p class="cta-banner-label reveal">Begin Today</p>
+          <h2 class="cta-banner-title reveal">
+            Skin that reflects how<br>
+            <em>radiant you feel</em>
+          </h2>
+          <p class="cta-banner-sub reveal reveal-delay-1">
+            Complete a free online assessment in minutes. A licensed Canadian physician will review your profile and determine if RevelleCare is right for you.
+          </p>
+          <div class="cta-banner-actions reveal reveal-delay-2">
+            <a href="mailto:hello@revellecare.com" class="btn btn-primary">Start Your Assessment</a>
+            <a href="pages/science.html" class="btn btn-outline">Read the Science</a>
+          </div>
+          <p class="availability-note reveal reveal-delay-3">
+            <strong>Currently available in</strong> Ontario &amp; British Columbia · Expanding nationally 2026
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <p class="footer-brand-name">RevelleCare</p>
+          <p class="footer-tagline">Prescription-led skincare designed for the biology of menopause. Physician-supervised. Beautifully delivered.</p>
+          <a href="mailto:hello@revellecare.com" style="font-size:var(--text-sm);color:var(--color-primary);font-weight:500;">hello@revellecare.com</a>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Explore</p>
+          <ul class="footer-links" role="list">
+            <li><a href="pages/science.html">The Science</a></li>
+            <li><a href="pages/products.html">Our Products</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Get Care</p>
+          <ul class="footer-links" role="list">
+            <li><a href="#assessment">Start Assessment</a></li>
+            <li><a href="mailto:hello@revellecare.com">Contact Us</a></li>
+            <li><a href="#how-it-works">Telemedicine</a></li>
+            <li><a href="#">Patient Portal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Legal</p>
+          <ul class="footer-links" role="list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Medical Disclaimer</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 RevelleCare Inc. All rights reserved. RevelleCare products require a valid Canadian prescription. This website does not provide medical advice.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Medical Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Education grid styles (inline for simplicity) -->
+  <style>
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+    .edu-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-6);
+    }
+    .edu-icon {
+      color: var(--color-primary);
+      margin-bottom: var(--space-5);
+    }
+    .edu-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+    .edu-desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      max-width: none;
+    }
+    @media (max-width: 768px) {
+      .edu-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
