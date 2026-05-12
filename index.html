@@ -288,7 +288,9 @@
           <span class="coming-soon-pill" style="margin-bottom:var(--space-6);">Launching Fall 2026</span>
           <h2 class="waitlist-title" id="waitlist-title">Be the first to know<br><em>when we launch</em></h2>
           <p class="waitlist-desc">Join the RevelleCare waitlist and be notified the moment we open in Ontario &amp; British Columbia. No obligation. No spam.</p>
-          <form class="waitlist-form" action="mailto:hello@revellecare.com" method="get" enctype="text/plain" aria-label="Waitlist signup">
+          <form class="waitlist-form" name="waitlist" netlify netlify-honeypot="bot-field" aria-label="Waitlist signup">
+            <input type="hidden" name="form-name" value="waitlist" />
+            <p class="bot-field" style="display:none;"><label>Do not fill this out: <input name="bot-field" /></label></p>
             <input type="email" class="waitlist-input" name="email" placeholder="Your email address" required aria-label="Email address" />
             <button type="submit" class="btn btn-primary">Notify Me</button>
           </form>
