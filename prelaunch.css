@@ -95,15 +95,18 @@
 
 .waitlist-form {
   display: flex;
+  flex-direction: column;
   gap: var(--space-3);
   max-width: 420px;
   margin-inline: auto;
-  flex-wrap: wrap;
+}
+
+.waitlist-form .btn {
+  align-self: center;
 }
 
 .waitlist-input {
-  flex: 1;
-  min-width: 200px;
+  width: 100%;
   padding: var(--space-3) var(--space-5);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
