@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: center;
   padding: clamp(var(--space-20), 10vw, var(--space-32)) clamp(var(--space-8), 6vw, var(--space-20));
-  padding-top: calc(clamp(var(--space-20), 10vw, var(--space-32)) + 5rem);
+  padding-top: calc(clamp(var(--space-20), 10vw, var(--space-32)) + 5rem + var(--banner-height));
   position: relative;
   z-index: 2;
 }
