@@ -34,6 +34,8 @@
   gap: var(--space-3);
   text-decoration: none;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .nav-logo-mark {
@@ -109,6 +111,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  flex-shrink: 0;
 }
 
 .nav-cta {
@@ -271,6 +274,15 @@
   .nav-toggle {
     display: flex;
     z-index: 101;
+  }
+
+  /* Ensure logo and CTA never overlap */
+  .nav-inner {
+    gap: var(--space-3);
+  }
+
+  .nav-logo-tagline {
+    display: none;
   }
 
   .footer-grid {
