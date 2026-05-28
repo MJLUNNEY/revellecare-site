@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="nav.css" />
   <link rel="stylesheet" href="prelaunch.css" />
   <link rel="stylesheet" href="menopause.css" />
+  <style>
+    /* Ensure nav always has a solid background on this page */
+    .site-header { background: var(--color-bg, #F8F7F4); box-shadow: 0 1px 0 rgba(14,107,104,0.1); }
+  </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28' font-family='Georgia,serif' font-style='italic' fill='%230E6B68'>R</text></svg>" />
 </head>
 <body>
@@ -410,26 +414,7 @@
     </div>
   </footer>
 
-  <script>
-    // Dark mode toggle (matches existing site pattern)
-    const btn = document.querySelector('[data-theme-toggle]');
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const html = document.documentElement;
-        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-      });
-    }
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    if (navToggle && navMenu) {
-      navToggle.addEventListener('click', () => {
-        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!expanded));
-        navMenu.classList.toggle('nav-menu--open');
-      });
-    }
-  </script>
+  <script src="main.js"></script>
 
 </body>
 </html>
