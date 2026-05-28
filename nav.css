@@ -36,6 +36,12 @@
   flex-shrink: 0;
   position: relative;
   z-index: 1;
+  outline: none;
+}
+.nav-logo:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .nav-logo-mark {
