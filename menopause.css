@@ -1,0 +1,556 @@
+/* ============================================================
+   RevelleCare — menopause.css
+   Page-specific styles for menopause.html
+   Brand: Teal #0E6B68 · Gold #C9B89A · Porcelain #F8F7F4
+   Fonts: Cormorant Garamond (serif) · Jost (sans-serif)
+   ============================================================ */
+
+/* ── Shared layout helpers ── */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section-intro {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--color-text-muted, #5a5a52);
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  line-height: 1.75;
+}
+.meno-section {
+  padding: 80px 0;
+}
+.meno-section h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: var(--color-teal, #0E6B68);
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.meno-section h2 em {
+  font-style: italic;
+  color: var(--color-gold, #C9B89A);
+}
+.btn {
+  display: inline-block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn-primary {
+  background: var(--color-teal, #0E6B68);
+  color: #fff;
+  border: 1.5px solid var(--color-teal, #0E6B68);
+}
+.btn-primary:hover {
+  background: #0a5452;
+  border-color: #0a5452;
+}
+.btn-lg {
+  padding: 18px 48px;
+  font-size: 0.95rem;
+}
+
+/* ── Pre-launch pill ── */
+.meno-pill {
+  display: inline-block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-teal, #0E6B68);
+  border: 1px solid var(--color-teal, #0E6B68);
+  border-radius: 2px;
+  padding: 5px 14px;
+  margin-bottom: 1.25rem;
+}
+
+/* ── HERO ── */
+.meno-hero {
+  padding: 90px 0 70px;
+  background: var(--color-porcelain, #F8F7F4);
+  border-bottom: 1px solid rgba(201, 184, 154, 0.25);
+}
+.meno-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.meno-hero-text h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #1a1a17;
+  margin-bottom: 1.5rem;
+}
+.meno-hero-text h1 em {
+  font-style: italic;
+  color: var(--color-teal, #0E6B68);
+}
+.meno-hero-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #4a4a42;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+.meno-hero-note {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #9a9a8e;
+  letter-spacing: 0.04em;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.meno-hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.stat-card {
+  background: #fff;
+  border: 1px solid rgba(201, 184, 154, 0.35);
+  border-radius: 4px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--color-teal, #0E6B68);
+  line-height: 1;
+}
+.stat-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #6a6a5e;
+  line-height: 1.4;
+}
+
+/* ── SYMPTOM GRID ── */
+.meno-explainer {
+  background: #fff;
+}
+.symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 2.5rem;
+}
+.symptom-card {
+  border: 1px solid rgba(14, 107, 104, 0.15);
+  border-radius: 4px;
+  padding: 28px 24px;
+  transition: box-shadow 0.2s;
+}
+.symptom-card:hover {
+  box-shadow: 0 4px 18px rgba(14, 107, 104, 0.08);
+}
+.symptom-icon {
+  font-size: 1.2rem;
+  color: var(--color-gold, #C9B89A);
+  margin-bottom: 10px;
+}
+.symptom-card h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a1a17;
+  margin-bottom: 0.6rem;
+}
+.symptom-card p {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: #5a5a52;
+  line-height: 1.7;
+  margin: 0;
+}
+.meno-note {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #7a7a6e;
+  border-left: 3px solid var(--color-gold, #C9B89A);
+  padding-left: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+.meno-note strong { color: #4a4a42; }
+
+/* ── OFFER SECTION (teal bg) ── */
+.meno-teal-bg {
+  background: var(--color-teal, #0E6B68);
+}
+.meno-teal-bg h2 {
+  color: #fff;
+}
+.meno-teal-bg .section-intro {
+  color: rgba(255,255,255,0.75);
+}
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 2.5rem;
+}
+.offer-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 4px;
+  padding: 32px 24px;
+  color: #fff;
+  transition: background 0.2s;
+}
+.offer-card:hover {
+  background: rgba(255,255,255,0.13);
+}
+.offer-card h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+  color: #fff;
+}
+.offer-type {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold, #C9B89A);
+  margin-bottom: 1rem;
+}
+.offer-card p {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 1.2rem;
+}
+.offer-link {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-gold, #C9B89A);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.offer-link:hover { text-decoration: underline; }
+.meno-note-light {
+  color: rgba(255,255,255,0.6);
+  border-left-color: rgba(201,184,154,0.5);
+  margin: 0 auto;
+}
+
+/* ── HOW IT WORKS ── */
+.meno-how {
+  background: var(--color-porcelain, #F8F7F4);
+}
+.steps-list {
+  max-width: 780px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(14,107,104,0.1);
+}
+.step:first-child { padding-top: 0; }
+.step:last-child { border-bottom: none; }
+.step-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--color-gold, #C9B89A);
+  line-height: 1;
+  padding-top: 4px;
+}
+.step-body h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-teal, #0E6B68);
+  margin-bottom: 0.5rem;
+}
+.step-body p {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #5a5a52;
+  line-height: 1.75;
+  margin: 0;
+}
+.meno-cta-block {
+  text-align: center;
+  padding-top: 1rem;
+}
+.meno-cta-block p {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  color: #8a8a7e;
+  margin-top: 0.75rem;
+}
+
+/* ── NO TESTING (gold bg) ── */
+.meno-gold-bg {
+  background: rgba(201, 184, 154, 0.12);
+  border-top: 1px solid rgba(201,184,154,0.3);
+  border-bottom: 1px solid rgba(201,184,154,0.3);
+}
+.meno-testing-inner {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 60px;
+  align-items: center;
+}
+.meno-testing-text h2 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+.meno-testing-text p {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.93rem;
+  font-weight: 300;
+  line-height: 1.78;
+  color: #4a4a42;
+  margin-bottom: 1rem;
+}
+.meno-pull-quote {
+  border-left: 4px solid var(--color-teal, #0E6B68);
+  padding: 24px 28px;
+  margin: 0;
+  background: #fff;
+  border-radius: 0 4px 4px 0;
+}
+.meno-pull-quote p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #1a1a17;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+.meno-pull-quote cite {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold, #C9B89A);
+  font-style: normal;
+}
+
+/* ── FAQ ── */
+.meno-faq { background: #fff; }
+.faq-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid rgba(14,107,104,0.1);
+  padding: 0;
+}
+.faq-item summary {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1a1a17;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  line-height: 1.45;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--color-teal, #0E6B68);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] summary::after {
+  content: '−';
+}
+.faq-answer {
+  padding: 0 0 20px;
+}
+.faq-answer p {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #5a5a52;
+  margin: 0;
+}
+
+/* ── FINAL CTA ── */
+.meno-final-cta {
+  background: var(--color-teal, #0E6B68);
+  text-align: center;
+}
+.meno-final-inner {
+  max-width: 680px;
+}
+.meno-final-cta h2 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+.meno-final-cta h2 em { color: var(--color-gold, #C9B89A); font-style: italic; }
+.meno-final-cta p {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+.meno-final-note {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.04em;
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+.meno-final-cta .btn-primary {
+  background: #fff;
+  color: var(--color-teal, #0E6B68);
+  border-color: #fff;
+}
+.meno-final-cta .btn-primary:hover {
+  background: rgba(255,255,255,0.88);
+}
+
+/* ── Site footer (minimal — matches existing pages) ── */
+.site-footer {
+  background: #1a1a17;
+  padding: 40px 0;
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-logo-mark {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--color-teal, #0E6B68);
+  line-height: 1;
+}
+.footer-brand-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-transform: uppercase;
+}
+.footer-nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-nav a {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
+.footer-nav a:hover { color: var(--color-gold, #C9B89A); }
+.footer-legal {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.65;
+  max-width: 700px;
+}
+
+/* ── Dark mode overrides ── */
+[data-theme="dark"] .meno-hero { background: #16201f; }
+[data-theme="dark"] .meno-hero-text h1 { color: #e8e6df; }
+[data-theme="dark"] .meno-hero-sub { color: #a8a89e; }
+[data-theme="dark"] .stat-card { background: #1e2e2c; border-color: rgba(201,184,154,0.2); }
+[data-theme="dark"] .meno-explainer { background: #111410; }
+[data-theme="dark"] .symptom-card { border-color: rgba(14,107,104,0.25); background: #181e1d; }
+[data-theme="dark"] .symptom-card h3 { color: #e8e6df; }
+[data-theme="dark"] .symptom-card p { color: #8a8a7e; }
+[data-theme="dark"] .meno-how { background: #16201f; }
+[data-theme="dark"] .step-body p { color: #8a8a7e; }
+[data-theme="dark"] .meno-gold-bg { background: rgba(201,184,154,0.07); }
+[data-theme="dark"] .meno-testing-text p { color: #a8a89e; }
+[data-theme="dark"] .meno-pull-quote { background: #1e2e2c; }
+[data-theme="dark"] .meno-pull-quote p { color: #e8e6df; }
+[data-theme="dark"] .meno-faq { background: #111410; }
+[data-theme="dark"] .faq-item summary { color: #e8e6df; }
+[data-theme="dark"] .faq-answer p { color: #8a8a7e; }
+[data-theme="dark"] .faq-item { border-color: rgba(14,107,104,0.2); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .meno-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .meno-hero-stats { grid-template-columns: 1fr 1fr; }
+  .symptom-grid { grid-template-columns: 1fr 1fr; }
+  .offer-grid { grid-template-columns: 1fr; }
+  .meno-testing-inner { grid-template-columns: 1fr; gap: 32px; }
+  .meno-testing-text h2 { text-align: center; }
+  .faq-columns { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .meno-section { padding: 56px 0; }
+  .meno-hero { padding: 60px 0 48px; }
+  .meno-hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .symptom-grid { grid-template-columns: 1fr; }
+  .step { grid-template-columns: 40px 1fr; gap: 16px; }
+  .step-num { font-size: 1.5rem; }
+}
