@@ -742,6 +742,7 @@
   .science-teaser-desc { max-width: none; }
 
   .founder-inner { grid-template-columns: 1fr; }
+  .sab-feature-inner { grid-template-columns: 1fr !important; }
   .founder-visual { max-width: 320px; }
   .founder-quote-badge { right: 0; }
 }
