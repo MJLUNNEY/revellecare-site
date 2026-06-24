@@ -38,7 +38,7 @@
 
 .sab-lede {
   color: var(--color-text-soft);
-  margin-bottom: var(--space-7);
+  margin-bottom: var(--space-8);
 }
 
 .sab-h2 {
@@ -95,7 +95,7 @@
 }
 
 @media (max-width: 640px) {
-  .sab-quote { padding: var(--space-6) var(--space-5) var(--space-6) var(--space-7); }
+  .sab-quote { padding: var(--space-6) var(--space-5) var(--space-6) var(--space-8); }
   .sab-quote::before { font-size: 3rem; top: var(--space-2); left: var(--space-3); }
 }
 
@@ -104,14 +104,14 @@
 
 .sab-bio-card {
   display: grid;
-  grid-template-columns: minmax(180px, 220px) 1fr;
-  gap: var(--space-7);
+  grid-template-columns: minmax(180px, 210px) 1fr;
+  gap: var(--space-10);
   align-items: center;
   background: var(--color-surface-alt, #F7F1E8);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  padding: var(--space-7);
-  margin-bottom: var(--space-7);
+  padding: var(--space-8);
+  margin-bottom: var(--space-10);
 }
 
 .sab-bio-portrait img {
@@ -274,7 +274,7 @@
 
 .sab-closing-body {
   max-width: 70ch;
-  margin-bottom: var(--space-7);
+  margin-bottom: var(--space-8);
 }
 
 .sab-closing-actions {
