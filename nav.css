@@ -94,10 +94,10 @@
 
 .nav-menu a {
   font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 400;
+  font-size: 0.82rem;
+  font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-full);
   white-space: nowrap;
