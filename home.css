@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: center;
   padding: clamp(var(--space-20), 10vw, var(--space-32)) clamp(var(--space-8), 6vw, var(--space-20));
-  padding-top: calc(clamp(var(--space-20), 10vw, var(--space-32)) + 5rem + var(--banner-height));
+  padding-top: calc(clamp(var(--space-20), 10vw, var(--space-32)) + 5rem);
   position: relative;
   z-index: 2;
 }
@@ -123,7 +123,7 @@
 
 .hero-brand-overlay {
   position: absolute;
-  top: clamp(5rem, 12vw, 8rem);
+  top: clamp(2rem, 8vw, 5rem);
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -742,7 +742,6 @@
   .science-teaser-desc { max-width: none; }
 
   .founder-inner { grid-template-columns: 1fr; }
-  .sab-feature-inner { grid-template-columns: 1fr !important; }
   .founder-visual { max-width: 320px; }
   .founder-quote-badge { right: 0; }
 }
