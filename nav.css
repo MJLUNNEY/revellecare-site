@@ -4,7 +4,7 @@
 
 .site-header {
   position: fixed;
-  top: var(--banner-height);
+  top: var(--banner-height, 36px);
   left: 0;
   right: 0;
   z-index: 100;
@@ -34,14 +34,6 @@
   gap: var(--space-3);
   text-decoration: none;
   flex-shrink: 0;
-  position: relative;
-  z-index: 1;
-  outline: none;
-}
-.nav-logo:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 4px;
-  border-radius: var(--radius-sm);
 }
 
 .nav-logo-mark {
@@ -88,19 +80,19 @@
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: var(--space-1);
   list-style: none;
 }
 
 .nav-menu a {
+  white-space: nowrap;
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--color-text);
-  padding: var(--space-2) var(--space-3);
+  color: #C9A84C;
+  padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-full);
-  white-space: nowrap;
   transition: color var(--transition), background var(--transition);
 }
 
@@ -118,7 +110,6 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  flex-shrink: 0;
 }
 
 .nav-cta {
@@ -281,15 +272,6 @@
   .nav-toggle {
     display: flex;
     z-index: 101;
-  }
-
-  /* Ensure logo and CTA never overlap */
-  .nav-inner {
-    gap: var(--space-3);
-  }
-
-  .nav-logo-tagline {
-    display: none;
   }
 
   .footer-grid {
