@@ -393,17 +393,31 @@
           <p class="waitlist-desc">
             Join The Collective and be notified the moment we open in Ontario &amp; British Columbia. No obligation. No spam.
           </p>
-          <form class="waitlist-form"  method="get" enctype="text/plain" aria-label="Collective signup">
-            <input
-              type="email"
-              class="waitlist-input"
-              name="email"
-              placeholder="Your email address"
-              required
-              aria-label="Email address"
-            />
-            <button type="submit" class="btn btn-primary">Notify Me</button>
-          </form>
+         <form class="waitlist-form" name="waitlist" netlify netlify-honeypot="bot-field" aria-label="Collective signup" id="collective-form">
+  <input type="hidden" name="form-name" value="waitlist" />
+  <p class="bot-field" style="display:none;"><label>Do not fill this out: <input name="bot-field" /></label></p>
+  <input type="text" class="waitlist-input" name="name" id="field-name" placeholder="What should we call you? (optional)" autocomplete="given-name" aria-label="First name (optional)" />
+  <input type="email" class="waitlist-input" name="email" id="field-email" placeholder="Your email address" required aria-label="Email address" />
+  <button type="submit" class="btn btn-primary">Notify Me</button>
+</form>
+<script>
+(function() {
+  var form = document.getElementById('collective-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('field-name').value.trim();
+    var email = document.getElementById('field-email').value.trim();
+    var netlifyData = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(netlifyData).toString()
+    }).catch(function(){});
+    form.innerHTML = '<p style="color:var(--color-primary);font-weight:600;font-size:var(--text-lg);text-align:center;">You\'re in. Welcome to The Collective.</p><p style="color:var(--color-text-muted);font-size:var(--text-sm);text-align:center;margin-top:0.5rem;">We\'ll be in touch the moment we launch in Ontario &amp; British Columbia.</p>';
+  });
+})();
+</script> 
           <p class="waitlist-note">Launching Fall 2026 · Ontario &amp; British Columbia first · National expansion to follow</p>
         </div>
       </div>
