@@ -69,7 +69,7 @@ revellecare.com`;
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Michele Lunney, RevelleCare <onboarding@resend.dev>',
+        from: 'Michèle Lunney, RevelleCare <michele@revellecare.com>',
         to: [email],
         reply_to: 'michele@revellecare.com',
         subject: "Welcome to The Collective \u2014 You're in.",
@@ -93,7 +93,7 @@ revellecare.com`;
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'RevelleCare Collective <onboarding@resend.dev>',
+        from: 'RevelleCare Collective <michele@revellecare.com>',
         to: ['michele@revellecare.com'],
         reply_to: 'michele@revellecare.com',
         subject: `New Collective Member: ${name || 'Unknown'} (${email})`,
