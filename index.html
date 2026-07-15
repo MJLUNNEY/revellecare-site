@@ -417,15 +417,8 @@
       body: new URLSearchParams(netlifyData).toString()
     }).catch(function(){});
 
-    // 2. Trigger Zapier welcome email to the new member
-    fetch('https://hooks.zapier.com/hooks/catch/27574930/4uetb72/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name || 'Collective Member', email: email })
-    }).catch(function(){});
-
-    // 3. Trigger Zapier notification to Michèle
-    fetch('https://hooks.zapier.com/hooks/catch/27574930/4uaqeku/', {
+    // 2. Send welcome email via Netlify serverless function
+    fetch('/.netlify/functions/send-welcome', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: name || 'Collective Member', email: email })
