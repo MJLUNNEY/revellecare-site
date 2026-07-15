@@ -409,11 +409,29 @@
     var name = document.getElementById('field-name').value.trim();
     var email = document.getElementById('field-email').value.trim();
     var netlifyData = new FormData(form);
+
+    // 1. Submit to Netlify forms
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(netlifyData).toString()
     }).catch(function(){});
+
+    // 2. Trigger Zapier welcome email to the new member
+    fetch('https://hooks.zapier.com/hooks/catch/27574930/4uetb72/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name || 'Collective Member', email: email })
+    }).catch(function(){});
+
+    // 3. Trigger Zapier notification to Michèle
+    fetch('https://hooks.zapier.com/hooks/catch/27574930/4uaqeku/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name || 'Collective Member', email: email })
+    }).catch(function(){});
+
+    // 4. Show confirmation message
     form.innerHTML = '<p style="color:var(--color-primary);font-weight:600;font-size:var(--text-lg);text-align:center;">You\'re in. Welcome to The Collective.</p><p style="color:var(--color-text-muted);font-size:var(--text-sm);text-align:center;margin-top:0.5rem;">We\'ll be in touch the moment we launch in Ontario &amp; British Columbia.</p>';
   });
 })();
