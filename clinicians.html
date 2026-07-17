@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Clinical Team — RevelleCare</title>
+  <meta name="description" content="RevelleCare connects women with independent licensed clinicians registered in Ontario and British Columbia. All clinical decisions — including whether to prescribe — are made solely by your clinician, based on your individual assessment." />
+
+  <meta property="og:title" content="Our Clinical Team — RevelleCare" />
+  <meta property="og:description" content="RevelleCare connects women with independent licensed clinicians for personalized prescription skincare consultations. Launching Fall 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://revellecare.com/clinicians.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="prelaunch.css" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28' font-family='Georgia,serif' font-style='italic' fill='%230E6B68'>R</text></svg>" />
+
+  <style>
+    /* ── Page-specific styles ── */
+    .clinician-principle-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      margin-top: clamp(var(--space-10), 4vw, var(--space-16));
+    }
+    .clinician-principle-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-6);
+    }
+    .clinician-principle-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(14,107,104,0.08);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-5);
+      font-size: 1.1rem;
+    }
+    .clinician-principle-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+    .clinician-principle-desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+    }
+    .credential-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+      margin-top: clamp(var(--space-8), 3vw, var(--space-12));
+    }
+    .credential-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-7) var(--space-6);
+      display: flex;
+      gap: var(--space-5);
+      align-items: flex-start;
+    }
+    .credential-badge {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 500;
+    }
+    .credential-body h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+    }
+    .credential-body p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+    .independence-callout {
+      background: var(--color-primary);
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-8), 5vw, var(--space-14)) clamp(var(--space-8), 6vw, var(--space-16));
+      text-align: center;
+      margin-top: clamp(var(--space-12), 6vw, var(--space-20));
+    }
+    .independence-callout h2 {
+      font-family: var(--font-display);
+      font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+      font-weight: 400;
+      color: white;
+      margin-bottom: var(--space-5);
+      line-height: 1.25;
+    }
+    .independence-callout p {
+      font-size: var(--text-base);
+      color: rgba(255,255,255,0.85);
+      max-width: 56ch;
+      margin-inline: auto;
+      line-height: 1.75;
+    }
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      margin-top: clamp(var(--space-8), 4vw, var(--space-12));
+    }
+    .process-step {
+      display: flex;
+      gap: var(--space-6);
+      align-items: flex-start;
+      padding: var(--space-6);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+    }
+    .process-step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid var(--color-primary);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-style: italic;
+    }
+    .process-step-body h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+    }
+    .process-step-body p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+    .regulatory-strip {
+      background: var(--color-surface-2, #F4F3EF);
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-8), 4vw, var(--space-12)) clamp(var(--space-8), 5vw, var(--space-14));
+      margin-top: clamp(var(--space-10), 5vw, var(--space-16));
+    }
+    .regulatory-strip h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      color: var(--color-text);
+      margin-bottom: var(--space-5);
+    }
+    .regulatory-strip ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+    .regulatory-strip li {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      padding-left: var(--space-5);
+      position: relative;
+    }
+    .regulatory-strip li::before {
+      content: '✓';
+      color: var(--color-primary);
+      position: absolute;
+      left: 0;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .clinician-principle-grid { grid-template-columns: 1fr; }
+      .credential-grid { grid-template-columns: 1fr; }
+      .regulatory-strip ul { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELAUNCH BANNER -->
+  <div class="prelaunch-banner" role="banner" aria-label="Pre-launch notice">
+    <strong>Coming Fall 2026</strong> &nbsp;·&nbsp; RevelleCare is currently in pre-launch. Products and services are not yet available. &nbsp;
+    <a href="index.html#waitlist">Join The Collective →</a>
+  </div>
+
+  <!-- NAV -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-logo" aria-label="RevelleCare home">
+          <span class="nav-logo-mark" aria-hidden="true">R</span>
+          <span class="nav-logo-text">
+            <span class="nav-logo-name">RevelleCare</span>
+            <span class="nav-logo-tagline">Prescription Skincare</span>
+          </span>
+        </a>
+        <ul class="nav-menu" role="list" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="science.html">The Science</a></li>
+          <li><a href="products.html">Treatment Areas</a></li>
+          <li><a href="clinicians.html" class="active">Our Clinicians</a></li>
+          <li><a href="pharmacy.html">Pharmacy Network</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="sab.html">Advisory Board</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode"></button>
+          <a href="index.html#waitlist" class="nav-cta">Join The Collective</a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero page-hero--teal" aria-labelledby="page-title">
+      <div class="container container--default">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <span aria-current="page">Our Clinicians</span>
+        </nav>
+        <p class="page-hero-label">Clinical Care</p>
+        <h1 class="page-hero-title" id="page-title">
+          Your care begins with<br>
+          <em>an independent clinician</em>
+        </h1>
+        <p class="page-hero-desc">
+          RevelleCare connects women with licensed Canadian healthcare clinicians who provide independent clinical assessments and, where medically appropriate, personalized prescription treatment plans. Your clinician — not RevelleCare — makes every clinical decision.
+        </p>
+      </div>
+      <span class="page-hero-watermark" style="color:rgba(14,107,104,0.04);" aria-hidden="true">R</span>
+    </section>
+
+    <!-- ═══════════════ THE INDEPENDENCE PRINCIPLE ═══════════════ -->
+    <section class="section" aria-labelledby="independence-title">
+      <div class="container container--default">
+
+        <header class="section-header reveal">
+          <p class="section-label">The RevelleCare Standard</p>
+          <h2 class="section-title" id="independence-title">Clinical independence<br><em>is non-negotiable</em></h2>
+          <p class="section-desc">Every RevelleCare clinician holds independent prescribing authority under Canadian law. RevelleCare provides the platform — your clinician provides the care. These are not the same thing, and that distinction matters for your safety.</p>
+        </header>
+
+        <div class="clinician-principle-grid">
+          <div class="clinician-principle-card reveal">
+            <div class="clinician-principle-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 3a2 2 0 110 4 2 2 0 010-4zm0 9c-2.67 0-5-1.34-5-3 0-1.66 2.33-3 5-3s5 1.34 5 3c0 1.66-2.33 3-5 3z" fill="currentColor"/></svg>
+            </div>
+            <h3 class="clinician-principle-title">Independent prescribing authority</h3>
+            <p class="clinician-principle-desc">RevelleCare clinicians hold independent prescribing authority under Canadian federal and provincial law. They do not require physician oversight to assess, diagnose, or prescribe. Their professional judgement is their own — regulated by their provincial college, not by RevelleCare.</p>
+          </div>
+          <div class="clinician-principle-card reveal reveal-delay-1">
+            <div class="clinician-principle-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="clinician-principle-title">No guaranteed prescription</h3>
+            <p class="clinician-principle-desc">A prescription is issued only if your clinician determines it is medically appropriate for you, based on your full assessment. RevelleCare does not instruct clinicians to prescribe, does not set clinical thresholds, and has no financial interest in the outcome of any individual clinical decision.</p>
+          </div>
+          <div class="clinician-principle-card reveal reveal-delay-2">
+            <div class="clinician-principle-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="clinician-principle-title">Patient relationship first</h3>
+            <p class="clinician-principle-desc">Before any prescription can be issued, a genuine clinician-patient relationship must be established through your intake and live consultation. This is a legal and ethical requirement under Canadian compounding and prescribing standards — and a commitment we take seriously.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ CLINICIAN CREDENTIALS ═══════════════ -->
+    <section class="section" style="background:var(--color-surface);" aria-labelledby="credentials-title">
+      <div class="container container--default">
+
+        <header class="section-header reveal">
+          <p class="section-label">Credentials &amp; Registration</p>
+          <h2 class="section-title" id="credentials-title">Fully licensed.<br><em>Provincially registered.</em></h2>
+          <p class="section-desc">Every clinician in the RevelleCare network holds active registration with their provincial regulatory college and meets our clinical competency standards for women's health and menopausal care.</p>
+        </header>
+
+        <div class="credential-grid reveal">
+
+          <div class="credential-card">
+            <div class="credential-badge" aria-hidden="true">ON</div>
+            <div class="credential-body">
+              <h3>Ontario Clinicians</h3>
+              <p>Registered with the <strong>College of Nurses of Ontario (CNO)</strong> and holding Extended Class (EC) registration, which grants full independent prescribing authority under the Nursing Act and the Regulated Health Professions Act. Ontario EC clinicians are among the most comprehensively trained prescribers in Canada.</p>
+            </div>
+          </div>
+
+          <div class="credential-card">
+            <div class="credential-badge" aria-hidden="true">BC</div>
+            <div class="credential-body">
+              <h3>British Columbia Clinicians</h3>
+              <p>Registered with the <strong>BC College of Nurses and Midwives (BCCNM)</strong> in the Nurse Practitioner designation. BC NPs hold prescriptive authority under the Health Professions Act and the Nurses (Registered) and Nurse Practitioners Regulation, with full scope to assess, diagnose, and prescribe.</p>
+            </div>
+          </div>
+
+          <div class="credential-card">
+            <div class="credential-badge" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3l1.5 4.5H16l-3.5 2.5L14 15l-4-3-4 3 1.5-5L4 7.5h4.5L10 3z" fill="white"/></svg>
+            </div>
+            <div class="credential-body">
+              <h3>Women's Health Specialization</h3>
+              <p>All RevelleCare clinicians have demonstrated experience in women's health, menopause, and hormonal care. Competency in peri- and post-menopausal assessment — including skin-related presentations and contraindications — is a requirement, not optional.</p>
+            </div>
+          </div>
+
+          <div class="credential-card">
+            <div class="credential-badge" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4v12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="credential-body">
+              <h3>Telehealth Certified</h3>
+              <p>RevelleCare clinicians are trained and experienced in virtual clinical assessment. Each holds appropriate malpractice insurance for telemedicine practice and is required to follow the same standard of care in a virtual setting as they would in person.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="regulatory-strip reveal" style="margin-top: clamp(var(--space-10),4vw,var(--space-14));">
+          <h3>What your clinician is legally authorized to do</h3>
+          <ul>
+            <li>Conduct a full clinical health assessment</li>
+            <li>Order and interpret diagnostic tests where appropriate</li>
+            <li>Diagnose health conditions within their scope of practice</li>
+            <li>Prescribe medications, including compounded topical treatments</li>
+            <li>Refer to specialists when clinically indicated</li>
+            <li>Establish and maintain an ongoing patient health record</li>
+            <li>Make independent clinical decisions without physician oversight</li>
+            <li>Renew or discontinue treatments based on clinical reassessment</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ WHAT TO EXPECT ═══════════════ -->
+    <section class="section" aria-labelledby="expect-title">
+      <div class="container container--default">
+
+        <header class="section-header reveal">
+          <p class="section-label">Your Consultation</p>
+          <h2 class="section-title" id="expect-title">What to expect<br><em>from your clinician</em></h2>
+          <p class="section-desc">Your RevelleCare consultation is a genuine clinical appointment — not an automated questionnaire. Here is exactly what happens.</p>
+        </header>
+
+        <div class="process-steps reveal">
+
+          <div class="process-step">
+            <div class="process-step-num" aria-hidden="true"><em>1</em></div>
+            <div class="process-step-body">
+              <h3>Complete your health intake</h3>
+              <p>Before your appointment, you complete a detailed medical intake covering your health history, current medications, skin concerns, menopausal symptoms, and contraindications. This takes 10–15 minutes and is reviewed by your clinician prior to your consultation. Your information is protected under PIPEDA and applicable provincial health privacy legislation.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-num" aria-hidden="true"><em>2</em></div>
+            <div class="process-step-body">
+              <h3>Your live virtual consultation</h3>
+              <p>You meet with your assigned clinician by video or phone for a live, individual clinical assessment. This is not a pre-recorded process or automated approval. Your clinician will ask follow-up questions, discuss your goals, review your intake, and exercise their independent professional judgement about whether any treatment is appropriate for you.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-num" aria-hidden="true"><em>3</em></div>
+            <div class="process-step-body">
+              <h3>Your personalized treatment plan — if appropriate</h3>
+              <p>If your clinician determines that prescription treatment is clinically appropriate, they will issue a patient-specific prescription tailored to your needs, skin, history, and stage. Your clinician selects the active ingredients, format, and strength — there is no default prescription. If your clinician determines treatment is not appropriate, they will advise you on next steps, including non-prescription alternatives or referral to specialist care.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-num" aria-hidden="true"><em>4</em></div>
+            <div class="process-step-body">
+              <h3>Ongoing care and annual renewal</h3>
+              <p>Your prescription is valid for one year. Before any renewal, you complete a new intake and undergo a fresh clinical reassessment with a RevelleCare clinician. There is no automatic refill. Your clinician may adjust, maintain, or discontinue your treatment plan based on your updated health status. Your long-term health always takes precedence over continuity of any particular treatment.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ INDEPENDENCE CALLOUT ═══════════════ -->
+    <section class="section" aria-label="Clinical independence statement">
+      <div class="container container--default">
+        <div class="independence-callout reveal">
+          <h2>RevelleCare does not practice medicine.<br><em>Your clinician does.</em></h2>
+          <p>RevelleCare is a telemedicine platform. We connect you to independent, licensed healthcare clinicians who hold their own prescribing authority and are solely responsible for the clinical care they provide. RevelleCare does not direct, instruct, or override the professional judgement of any clinician in our network. All clinical decisions belong to your clinician — as the law requires and as good care demands.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ JOIN CTA ═══════════════ -->
+    <section class="cta-banner section" aria-labelledby="clin-cta-title">
+      <div class="container container--narrow">
+        <div class="cta-banner-inner">
+          <p class="cta-banner-label reveal">Launching Fall 2026</p>
+          <h2 class="cta-banner-title reveal" id="clin-cta-title">
+            Your clinician is waiting<br><em>to meet you.</em>
+          </h2>
+          <p class="cta-banner-sub reveal reveal-delay-1">Join The Collective to be notified when we open consultations in Ontario &amp; British Columbia.</p>
+          <div class="cta-banner-actions reveal reveal-delay-2">
+            <a href="index.html#waitlist" class="btn btn-primary">Join The Collective</a>
+            <a href="pharmacy.html" class="btn btn-outline">Our Pharmacy Network</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-brand-name">RevelleCare</p>
+          <p class="footer-tagline">A telemedicine platform connecting women with licensed clinicians and a trusted compounding pharmacy for personalized prescription skincare care. Launching Fall 2026 in Ontario &amp; British Columbia.</p>
+          <a href="mailto:hello@revellecare.com" style="font-size:var(--text-sm);color:var(--color-primary);font-weight:500;">hello@revellecare.com</a>
+        </div>
+        <div>
+          <p class="footer-col-title">Explore</p>
+          <ul class="footer-links" role="list">
+            <li><a href="science.html">The Science</a></li>
+            <li><a href="products.html">Treatment Areas</a></li>
+            <li><a href="clinicians.html">Our Clinicians</a></li>
+            <li><a href="pharmacy.html">Pharmacy Network</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html#waitlist">Join The Collective</a></li>
+            <li><a href="mailto:hello@revellecare.com">Contact Us</a></li>
+            <li style="font-size:0.85em;opacity:0.7;">hello@revellecare.com</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Legal</p>
+          <ul class="footer-links" role="list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Medical Disclaimer</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 RevelleCare Inc. All rights reserved. RevelleCare is a pre-launch company. No products or services are currently available for sale or prescription. This website is for informational and educational purposes only and does not constitute medical advice. RevelleCare's planned prescription services will require a valid Canadian prescription issued by a licensed Canadian healthcare clinician. Health Canada regulatory review is pending. Individual results may vary.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Medical Disclaimer</a>
+        </div>
+      </div>
+
+      <!-- HEALTH CANADA COMPLIANCE DISCLAIMER -->
+      <div class="footer-compliance-disclaimer" style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--color-border);font-size:var(--text-xs);color:var(--color-text-faint);line-height:1.75;max-width:100%;">
+        <p style="margin-bottom:var(--space-3);"><strong style="color:var(--color-text-muted);">Important Notice</strong></p>
+        <p style="margin-bottom:var(--space-2);">RevelleCare is a telemedicine platform that facilitates access to independent licensed healthcare clinicians and a licensed compounding pharmacy network. RevelleCare does not practice medicine, does not provide medical advice, and is not a pharmacy or a drug manufacturer. All medical decisions — including whether to prescribe — are made solely by your licensed clinician based on medical necessity. Prescriptions are prepared and dispensed only by a licensed pharmacist. This website does not advertise or promote any prescription drug and is not a substitute for professional medical advice.</p>
+        <p style="margin-bottom:var(--space-2);">A prescription is issued only after you complete a medical assessment and consultation with a licensed clinician, and only if the clinician determines treatment is medically appropriate for you. Completing an assessment does not guarantee a prescription. You are never charged for a prescription medication unless a prescription has been issued by your clinician.</p>
+        <p>It is not permitted in Canada to publicly display market pricing for prescription medication. Estimated treatment costs are disclosed during your online clinical consultation only. RevelleCare is a pre-launch company. Services are not yet available. This website is for educational purposes only.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

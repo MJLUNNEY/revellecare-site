@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RevelleCare Pharmacy Network — Compounding with Integrity</title>
+  <meta name="description" content="RevelleCare Pharmacy Network is a curated group of Health Canada-licensed compounding pharmacies. Every prescription is prepared patient-specifically, by a licensed Canadian pharmacist, for your individual needs." />
+
+  <meta property="og:title" content="RevelleCare Pharmacy Network" />
+  <meta property="og:description" content="Every RevelleCare prescription is filled by a licensed Canadian compounding pharmacist — prepared specifically for you, never mass-manufactured." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://revellecare.com/pharmacy.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="prelaunch.css" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28' font-family='Georgia,serif' font-style='italic' fill='%230E6B68'>R</text></svg>" />
+
+  <style>
+    /* ── Page-specific styles ── */
+    .standard-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      margin-top: clamp(var(--space-10), 4vw, var(--space-14));
+    }
+    .standard-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-6);
+    }
+    .standard-card-num {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-style: italic;
+      color: var(--color-primary);
+      opacity: 0.25;
+      line-height: 1;
+      margin-bottom: var(--space-4);
+    }
+    .standard-card h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+    .standard-card p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+    }
+    .compound-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: start;
+      margin-top: clamp(var(--space-10), 4vw, var(--space-14));
+    }
+    .compound-text h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 400;
+      color: var(--color-text);
+      line-height: 1.25;
+      margin-bottom: var(--space-5);
+    }
+    .compound-text p {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+    .compound-difference {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+    }
+    .compound-difference h4 {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 400;
+      margin-bottom: var(--space-5);
+      color: var(--color-text);
+    }
+    .diff-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: var(--text-sm);
+    }
+    .diff-row:last-child { border-bottom: none; }
+    .diff-label {
+      color: var(--color-text-muted);
+      flex: 1;
+    }
+    .diff-val-mass {
+      color: var(--color-text-faint);
+      text-decoration: line-through;
+      flex: 1;
+      text-align: right;
+    }
+    .diff-val-compound {
+      color: var(--color-primary);
+      font-weight: 500;
+      flex: 1;
+      text-align: right;
+    }
+    .diff-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-faint);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: var(--space-1);
+    }
+    .pharmacy-promise {
+      background: var(--color-primary);
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-8), 5vw, var(--space-14)) clamp(var(--space-8), 6vw, var(--space-16));
+      margin-top: clamp(var(--space-12), 6vw, var(--space-20));
+    }
+    .pharmacy-promise h2 {
+      font-family: var(--font-display);
+      font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+      font-weight: 400;
+      color: white;
+      margin-bottom: var(--space-6);
+      line-height: 1.25;
+    }
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-8);
+    }
+    .promise-item {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+    }
+    .promise-check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .promise-item p {
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.88);
+      line-height: 1.65;
+    }
+    .dispensing-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+      margin-top: clamp(var(--space-10), 4vw, var(--space-14));
+      counter-reset: step;
+    }
+    .dispensing-step {
+      position: relative;
+      padding: var(--space-6);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      counter-increment: step;
+    }
+    .dispensing-step::before {
+      content: counter(step, decimal-leading-zero);
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-style: italic;
+      color: var(--color-primary);
+      opacity: 0.2;
+      display: block;
+      margin-bottom: var(--space-3);
+      line-height: 1;
+    }
+    .dispensing-step h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+    }
+    .dispensing-step p {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+    .canada-post-note {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-primary);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      padding: var(--space-5) var(--space-6);
+      margin-top: var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+    .canada-post-note strong { color: var(--color-text); }
+    .accreditation-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-top: clamp(var(--space-8), 4vw, var(--space-12));
+    }
+    .accreditation-badge {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4) var(--space-5);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .accreditation-badge::before {
+      content: '✓';
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: var(--text-base);
+    }
+    @media (max-width: 900px) {
+      .dispensing-steps { grid-template-columns: repeat(2, 1fr); }
+      .compound-split { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .standard-grid { grid-template-columns: 1fr; }
+      .promise-grid { grid-template-columns: 1fr; }
+      .dispensing-steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .dispensing-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELAUNCH BANNER -->
+  <div class="prelaunch-banner" role="banner" aria-label="Pre-launch notice">
+    <strong>Coming Fall 2026</strong> &nbsp;·&nbsp; RevelleCare is currently in pre-launch. Products and services are not yet available. &nbsp;
+    <a href="index.html#waitlist">Join The Collective →</a>
+  </div>
+
+  <!-- NAV -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-logo" aria-label="RevelleCare home">
+          <span class="nav-logo-mark" aria-hidden="true">R</span>
+          <span class="nav-logo-text">
+            <span class="nav-logo-name">RevelleCare</span>
+            <span class="nav-logo-tagline">Prescription Skincare</span>
+          </span>
+        </a>
+        <ul class="nav-menu" role="list" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="science.html">The Science</a></li>
+          <li><a href="products.html">Treatment Areas</a></li>
+          <li><a href="clinicians.html">Our Clinicians</a></li>
+          <li><a href="pharmacy.html" class="active">Pharmacy Network</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="sab.html">Advisory Board</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode"></button>
+          <a href="index.html#waitlist" class="nav-cta">Join The Collective</a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero page-hero--teal" aria-labelledby="page-title">
+      <div class="container container--default">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <span aria-current="page">Pharmacy Network</span>
+        </nav>
+        <p class="page-hero-label">RevelleCare Pharmacy Network</p>
+        <h1 class="page-hero-title" id="page-title">
+          Compounded for you.<br>
+          <em>Filled by a pharmacist.</em>
+        </h1>
+        <p class="page-hero-desc">
+          Every prescription issued through RevelleCare is filled by a licensed Canadian compounding pharmacist at an accredited pharmacy within our network. Your treatment is prepared specifically for you — patient by patient, prescription by prescription.
+        </p>
+      </div>
+      <span class="page-hero-watermark" style="color:rgba(14,107,104,0.04);" aria-hidden="true">R</span>
+    </section>
+
+    <!-- ═══════════════ NETWORK STANDARDS ═══════════════ -->
+    <section class="section" aria-labelledby="standards-title">
+      <div class="container container--default">
+
+        <header class="section-header reveal">
+          <p class="section-label">Network Standards</p>
+          <h2 class="section-title" id="standards-title">Every pharmacy in our network<br><em>meets a higher standard</em></h2>
+          <p class="section-desc">Admission to the RevelleCare Pharmacy Network is not automatic. Every pharmacy partner is assessed against a rigorous set of clinical, compliance, and quality criteria before a single prescription is filled.</p>
+        </header>
+
+        <div class="standard-grid">
+          <div class="standard-card reveal">
+            <div class="standard-card-num" aria-hidden="true">01</div>
+            <h3>Health Canada Licensed</h3>
+            <p>All pharmacies in the RevelleCare network hold active Drug Establishment Licences (DEL) issued by Health Canada, authorizing them to compound prescription medications under the Food and Drugs Act and its Regulations. Licence status is verified on admission and monitored continuously.</p>
+          </div>
+          <div class="standard-card reveal reveal-delay-1">
+            <div class="standard-card-num" aria-hidden="true">02</div>
+            <h3>Provincial College Accredited</h3>
+            <p>Every network pharmacy holds accreditation from its provincial pharmacy college — the Ontario College of Pharmacists (OCP) or the College of Pharmacists of British Columbia (CPBC) — and operates under the professional oversight of a licensed pharmacist-in-charge. Accreditation is not self-assessed; it is granted by the regulatory college.</p>
+          </div>
+          <div class="standard-card reveal reveal-delay-2">
+            <div class="standard-card-num" aria-hidden="true">03</div>
+            <h3>Compounding Specialist</h3>
+            <p>RevelleCare network pharmacies specialize in topical compounding for dermatological and hormonal applications. They maintain dedicated sterile and non-sterile compounding areas, USP-compliant quality standards, and rigorous in-process testing — and they have done so with a clinical track record RevelleCare has independently verified.</p>
+          </div>
+        </div>
+
+        <div class="accreditation-row reveal">
+          <div class="accreditation-badge">Health Canada Drug Establishment Licence</div>
+          <div class="accreditation-badge">Ontario College of Pharmacists accreditation</div>
+          <div class="accreditation-badge">College of Pharmacists of BC accreditation</div>
+          <div class="accreditation-badge">Topical compounding specialization</div>
+          <div class="accreditation-badge">Good Compounding Practices (GCP) compliance</div>
+          <div class="accreditation-badge">PIPEDA-compliant patient data handling</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ COMPOUNDING DIFFERENCE ═══════════════ -->
+    <section class="section" style="background:var(--color-surface);" aria-labelledby="compound-title">
+      <div class="container container--default">
+
+        <header class="section-header reveal">
+          <p class="section-label">What is Compounding?</p>
+          <h2 class="section-title" id="compound-title">Why your prescription<br><em>cannot come from a factory</em></h2>
+        </header>
+
+        <div class="compound-split">
+          <div class="compound-text reveal">
+            <h3>Compounding is personal medicine.<br>It has always been.</h3>
+            <p>Before pharmaceutical mass-manufacturing existed, every prescription was compounded — prepared by a pharmacist for a named patient, to a specific formula, in the exact dose that patient needed. Compounding is not a workaround or a shortcut. It is the original model of precision medicine.</p>
+            <p>For women at peri- and post-menopause, mass-manufactured skincare — even clinical skincare — offers one formula for millions of different women. Compounding offers something different: a formulation that is built for your skin, your age, your hormone profile, your sensitivities. It is only possible because your clinician writes a prescription and a pharmacist prepares it specifically for you.</p>
+            <p>Health Canada regulates compounding pharmacies separately from mass-drug manufacturers precisely because compounding is not manufacturing. A compounding pharmacy cannot mass-produce and stockpile a product. They cannot distribute it commercially. Every preparation is for a named patient with a valid, patient-specific prescription. That is not a limitation — it is the entire point.</p>
+          </div>
+          <div class="compound-difference reveal reveal-delay-1">
+            <h4>Compounding vs. Mass Manufacturing</h4>
+            <div class="diff-header">
+              <span style="flex:2;">Standard</span>
+              <span style="flex:1;text-align:right;">Mass-manufactured</span>
+              <span style="flex:1;text-align:right;">RevelleCare</span>
+            </div>
+            <div class="diff-row">
+              <span class="diff-label" style="flex:2;">Who it's made for</span>
+              <span class="diff-val-mass">Everyone</span>
+              <span class="diff-val-compound">You, specifically</span>
+            </div>
+            <div class="diff-row">
+              <span class="diff-label" style="flex:2;">Requires a prescription</span>
+              <span class="diff-val-mass">Not always</span>
+              <span class="diff-val-compound">Always</span>
+            </div>
+            <div class="diff-row">
+              <span class="diff-label" style="flex:2;">Formula flexibility</span>
+              <span class="diff-val-mass">Fixed</span>
+              <span class="diff-val-compound">Clinician-determined</span>
+            </div>
+            <div class="diff-row">
+              <span class="diff-label" style="flex:2;">Regulatory oversight</span>
+              <span class="diff-val-mass">Health Canada (NDS)</span>
+              <span class="diff-val-compound">Health Canada + Provincial College</span>
+            </div>
+            <div class="diff-row">
+              <span class="diff-label" style="flex:2;">Prepared by</span>
+              <span class="diff-val-mass">Industrial manufacturer</span>
+              <span class="diff-val-compound">Licensed pharmacist</span>
+            </div>
+            <div class="diff-row">
+              <span class="diff-label" style="flex:2;">Stockpiled for sale?</span>
+              <span class="diff-val-mass">Yes</span>
+              <span class="diff-val-compound">No — never</span>
+            </div>
+            <div class="diff-row">
+              <span class="diff-label" style="flex:2;">Dispensed to</span>
+              <span class="diff-val-mass">Anyone who buys it</span>
+              <span class="diff-val-compound">Named patient only</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ PHARMACY PROMISE ═══════════════ -->
+    <section class="section" aria-label="Pharmacy commitment">
+      <div class="container container--default">
+        <div class="pharmacy-promise reveal">
+          <h2>The RevelleCare<br>Pharmacy Promise</h2>
+          <p style="color:rgba(255,255,255,0.85);font-size:var(--text-base);line-height:1.75;">Every prescription filled through the RevelleCare Pharmacy Network carries the same commitment — to you, and to the law.</p>
+          <div class="promise-grid">
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>
+              <p>Your prescription is prepared by a licensed pharmacist, not an automated manufacturing line</p>
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>
+              <p>Your formula is compounded for you — only after your clinician issues a patient-specific prescription</p>
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>
+              <p>Your medication is not pre-prepared, pre-stocked, or commercially distributed — it is prepared on receipt of your prescription</p>
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>
+              <p>Every active ingredient meets purity and potency standards validated by the compounding pharmacist</p>
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>
+              <p>Your treatment is shipped directly to you in tamper-evident, temperature-appropriate packaging</p>
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>
+              <p>Your pharmacist can be contacted directly with questions about your prescription — by you and by your clinician</p>
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>
+              <p>Your health information is handled in full compliance with PIPEDA and applicable provincial health privacy legislation</p>
+            </div>
+            <div class="promise-item">
+              <div class="promise-check" aria-hidden="true">✓</div>
+              <p>The dispensing contract for your prescription is between you and your pharmacist — RevelleCare facilitates, but your pharmacist is responsible for your dispensed medication</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ HOW YOUR PRESCRIPTION IS FILLED ═══════════════ -->
+    <section class="section" aria-labelledby="dispensing-title">
+      <div class="container container--default">
+
+        <header class="section-header reveal">
+          <p class="section-label">The Dispensing Process</p>
+          <h2 class="section-title" id="dispensing-title">From your clinician's pen<br><em>to your door</em></h2>
+          <p class="section-desc">Once your RevelleCare clinician issues your prescription, here is exactly what happens — every step governed by Health Canada and provincial pharmacy law.</p>
+        </header>
+
+        <div class="dispensing-steps reveal">
+
+          <div class="dispensing-step">
+            <h3>Prescription issued</h3>
+            <p>Your independent clinician writes a patient-specific prescription — naming you, your formula, the active ingredients, strength, vehicle, quantity, and directions. This document is legally yours and is transmitted directly to your designated pharmacist in the RevelleCare network.</p>
+          </div>
+
+          <div class="dispensing-step">
+            <h3>Pharmacist review</h3>
+            <p>A licensed pharmacist at your designated network pharmacy reviews the prescription for appropriateness, completeness, and compounding feasibility. The pharmacist may contact your clinician with questions. This review is independent — the pharmacist is not obligated to fill any prescription they have clinical concerns about.</p>
+          </div>
+
+          <div class="dispensing-step">
+            <h3>Patient-specific compounding</h3>
+            <p>Your formula is compounded using pharmaceutical-grade active ingredients in your designated pharmacy's licensed compounding area. Every batch is in-process tested for appearance, consistency, and pH. Your preparation is made only once your prescription is in hand — not before.</p>
+          </div>
+
+          <div class="dispensing-step">
+            <h3>Labelled &amp; shipped to you</h3>
+            <p>Your compounded treatment is labelled under your name, with your clinician's name, the pharmacy's licence number, and dispensing date — exactly as required by the Food and Drugs Act. It ships via tracked, temperature-appropriate courier directly to your door within 5–7 business days of prescription receipt.</p>
+          </div>
+
+        </div>
+
+        <div class="canada-post-note reveal">
+          <strong>Delivery across Canada:</strong> All RevelleCare prescriptions are shipped via Canada Post Xpresspost, fully tracked, in discreet packaging. Your package contains your labelled prescription, a printed instructions sheet, and product care information. If you are not home for delivery, your package will be held at your local post office. Temperature-sensitive shipments are packaged with appropriate insulating materials.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════ JOIN CTA ═══════════════ -->
+    <section class="cta-banner section" aria-labelledby="pharm-cta-title">
+      <div class="container container--narrow">
+        <div class="cta-banner-inner">
+          <p class="cta-banner-label reveal">Launching Fall 2026</p>
+          <h2 class="cta-banner-title reveal" id="pharm-cta-title">
+            Precision skincare,<br><em>prepared for you.</em>
+          </h2>
+          <p class="cta-banner-sub reveal reveal-delay-1">Join The Collective to be first in line when RevelleCare opens consultations in Ontario &amp; British Columbia this fall.</p>
+          <div class="cta-banner-actions reveal reveal-delay-2">
+            <a href="index.html#waitlist" class="btn btn-primary">Join The Collective</a>
+            <a href="clinicians.html" class="btn btn-outline">Meet Our Clinicians</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-brand-name">RevelleCare</p>
+          <p class="footer-tagline">A telemedicine platform connecting women with licensed clinicians and a trusted compounding pharmacy for personalized prescription skincare. Launching Fall 2026 in Ontario &amp; British Columbia.</p>
+          <a href="mailto:hello@revellecare.com" style="font-size:var(--text-sm);color:var(--color-primary);font-weight:500;">hello@revellecare.com</a>
+        </div>
+        <div>
+          <p class="footer-col-title">Explore</p>
+          <ul class="footer-links" role="list">
+            <li><a href="science.html">The Science</a></li>
+            <li><a href="products.html">Treatment Areas</a></li>
+            <li><a href="clinicians.html">Our Clinicians</a></li>
+            <li><a href="pharmacy.html">Pharmacy Network</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html#waitlist">Join The Collective</a></li>
+            <li><a href="mailto:hello@revellecare.com">Contact Us</a></li>
+            <li style="font-size:0.85em;opacity:0.7;">hello@revellecare.com</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Legal</p>
+          <ul class="footer-links" role="list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Medical Disclaimer</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 RevelleCare Inc. All rights reserved. RevelleCare is a pre-launch company. No products or services are currently available for sale or prescription. This website is for informational and educational purposes only and does not constitute medical advice. RevelleCare's planned prescription services will require a valid Canadian prescription issued by a licensed Canadian healthcare clinician. Health Canada regulatory review is pending. Individual results may vary.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Medical Disclaimer</a>
+        </div>
+      </div>
+
+      <!-- HEALTH CANADA COMPLIANCE DISCLAIMER -->
+      <div class="footer-compliance-disclaimer" style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--color-border);font-size:var(--text-xs);color:var(--color-text-faint);line-height:1.75;max-width:100%;">
+        <p style="margin-bottom:var(--space-3);"><strong style="color:var(--color-text-muted);">Important Notice</strong></p>
+        <p style="margin-bottom:var(--space-2);">RevelleCare is a telemedicine platform that facilitates access to independent licensed healthcare clinicians and a licensed compounding pharmacy network. RevelleCare does not practice medicine, does not provide medical advice, and is not a pharmacy or a drug manufacturer. All medical decisions — including whether to prescribe — are made solely by your licensed clinician based on medical necessity. Prescriptions are prepared and dispensed only by a licensed pharmacist. This website does not advertise or promote any prescription drug and is not a substitute for professional medical advice.</p>
+        <p style="margin-bottom:var(--space-2);">A prescription is issued only after you complete a medical assessment and consultation with a licensed clinician, and only if the clinician determines treatment is medically appropriate for you. Completing an assessment does not guarantee a prescription. You are never charged for a prescription medication unless a prescription has been issued by your clinician.</p>
+        <p>It is not permitted in Canada to publicly display market pricing for prescription medication. Estimated treatment costs are disclosed during your online clinical consultation only. RevelleCare is a pre-launch company. Services are not yet available. This website is for educational purposes only.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
