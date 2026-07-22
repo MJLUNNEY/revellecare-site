@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Collective — RevelleCare | Education, Science & Community for Women</title>
+  <meta name="description" content="The RevelleCare Collective is Canada's leading resource for evidence-based women's prescription skin health education — from hormonal skincare to pigmentation, rosacea, acne, and tretinoin — and a community where women share real results." />
+  <meta property="og:title" content="The Collective — RevelleCare" />
+  <meta property="og:description" content="Evidence-based education and community for women — hormonal skin, pigmentation, rosacea, acne, and tretinoin. Prescription skincare, explained." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28' font-family='Georgia,serif' font-style='italic' fill='%230E6B68'>R</text></svg>" />
+
+  <style>
+    /* ── Page Structure ─────────────────────────────── */
+    body { background: var(--color-bg); }
+
+    .container {
+      max-width: var(--content-wide);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+    .container--narrow {
+      max-width: var(--content-default);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    /* ── Masthead ────────────────────────────────────── */
+    .collective-masthead {
+      border-bottom: 1px solid var(--color-divider);
+      padding: var(--space-16) 0 var(--space-12);
+      text-align: center;
+    }
+    .masthead-series-label {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-6);
+    }
+    .masthead-series-label::before,
+    .masthead-series-label::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--color-primary);
+      opacity: 0.4;
+    }
+    .masthead-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 400;
+      color: var(--color-text);
+      line-height: 1.05;
+      margin-bottom: var(--space-6);
+    }
+    .masthead-title em {
+      font-style: italic;
+      color: var(--color-primary);
+    }
+    .masthead-description {
+      max-width: 580px;
+      margin: 0 auto var(--space-8);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+    }
+    .masthead-meta {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.08em;
+    }
+    .masthead-meta span {
+      display: inline-block;
+      margin: 0 var(--space-3);
+    }
+    .masthead-meta span::before { content: '·'; margin-right: var(--space-3); }
+    .masthead-meta span:first-child::before { display: none; }
+
+    /* ── Section Labels ──────────────────────────────── */
+    .section-label {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      border-bottom: 1px solid var(--color-divider);
+      padding-bottom: var(--space-3);
+      margin-bottom: var(--space-8);
+    }
+
+    /* ── Featured Article (Hero) ─────────────────────── */
+    .featured-section {
+      padding: var(--space-16) 0;
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .featured-grid { grid-template-columns: 1fr; gap: var(--space-10); }
+    }
+    .featured-image-wrap {
+      position: relative;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--color-surface-2);
+    }
+    .featured-image-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .featured-image-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--color-primary-faint) 0%, var(--color-gold-light) 100%);
+    }
+    .featured-image-placeholder svg {
+      width: 80px; height: 80px;
+      opacity: 0.25;
+    }
+    .featured-series-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      background: var(--color-primary-faint);
+      border: 1px solid var(--color-primary-light);
+      border-radius: var(--radius-full);
+      padding: 4px 12px;
+      margin-bottom: var(--space-5);
+    }
+    .featured-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.75rem);
+      font-weight: 400;
+      color: var(--color-text);
+      line-height: 1.15;
+      margin-bottom: var(--space-5);
+    }
+    .featured-title em { font-style: italic; }
+    .featured-excerpt {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--space-6);
+    }
+    .featured-byline {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+    .byline-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--color-gold-light);
+      border: 2px solid var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--color-gold-deep);
+      flex-shrink: 0;
+    }
+    .byline-info { display: flex; flex-direction: column; }
+    .byline-name {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .byline-role {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+    .read-article-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      border-bottom: 2px solid var(--color-primary);
+      padding-bottom: 2px;
+      transition: gap var(--transition);
+    }
+    .read-article-btn:hover { gap: var(--space-4); }
+    .read-article-btn svg { width: 16px; height: 16px; }
+
+    /* ── Pull Quote ──────────────────────────────────── */
+    .pull-quote-section {
+      background: var(--color-primary);
+      padding: var(--space-16) 0;
+      margin: var(--space-4) 0;
+    }
+    .pull-quote {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pull-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.4;
+      margin: 0 0 var(--space-6);
+      padding: 0;
+      border: none;
+    }
+    .pull-quote-source {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ── Article Grid ────────────────────────────────── */
+    .articles-section {
+      padding: var(--space-16) 0;
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: var(--space-8);
+    }
+    @media (max-width: 600px) {
+      .articles-grid { grid-template-columns: 1fr; }
+    }
+    .article-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-divider);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      text-decoration: none;
+      display: block;
+    }
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-primary-light);
+    }
+    .card-image {
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--color-primary-faint) 0%, var(--color-gold-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(14,107,104,0.12) 100%);
+    }
+    .card-issue-number {
+      position: absolute;
+      top: var(--space-4);
+      left: var(--space-4);
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      background: rgba(255,255,255,0.92);
+      border-radius: var(--radius-full);
+      padding: 3px 10px;
+    }
+    .card-icon {
+      width: 48px; height: 48px;
+      opacity: 0.18;
+    }
+    .card-body { padding: var(--space-6); }
+    .card-series {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-gold-deep);
+      margin-bottom: var(--space-3);
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      color: var(--color-text);
+      line-height: 1.2;
+      margin-bottom: var(--space-3);
+    }
+    .card-title em { font-style: italic; }
+    .card-excerpt {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin-bottom: var(--space-5);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-divider);
+    }
+    .card-byline-name {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+    .card-read-link {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .card-read-link svg { width: 12px; height: 12px; }
+
+    /* ── Coming Soon Card ────────────────────────────── */
+    .article-card--coming-soon {
+      opacity: 0.6;
+      pointer-events: none;
+      border-style: dashed;
+    }
+    .coming-soon-badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      background: var(--color-surface-2);
+      border-radius: var(--radius-full);
+      padding: 3px 10px;
+      margin-bottom: var(--space-3);
+    }
+
+    /* ── Community Section ───────────────────────────── */
+    .community-section {
+      background: var(--color-surface-2);
+      border-top: 1px solid var(--color-divider);
+      border-bottom: 1px solid var(--color-divider);
+      padding: var(--space-20) 0;
+      margin: var(--space-4) 0;
+    }
+    .community-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .community-inner { grid-template-columns: 1fr; gap: var(--space-10); }
+    }
+    .community-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 400;
+      color: var(--color-text);
+      line-height: 1.1;
+      margin-bottom: var(--space-5);
+    }
+    .community-heading em { font-style: italic; color: var(--color-primary); }
+    .community-body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--space-8);
+    }
+    .community-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+    .community-pillar {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .pillar-icon {
+      width: 36px; height: 36px;
+      border-radius: var(--radius-md);
+      background: var(--color-primary-faint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .pillar-icon svg { width: 18px; height: 18px; color: var(--color-primary); }
+    .pillar-text { display: flex; flex-direction: column; }
+    .pillar-title {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+    .pillar-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+    .community-cta-wrap { padding-top: var(--space-4); }
+    .forum-preview {
+      background: var(--color-surface);
+      border: 1px solid var(--color-divider);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .forum-preview-header {
+      padding: var(--space-5) var(--space-6);
+      border-bottom: 1px solid var(--color-divider);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .forum-preview-title {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .forum-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-success);
+    }
+    .forum-live-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-success);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .forum-thread {
+      padding: var(--space-5) var(--space-6);
+      border-bottom: 1px solid var(--color-divider);
+      transition: background var(--transition);
+    }
+    .forum-thread:last-child { border-bottom: none; }
+    .forum-thread:hover { background: var(--color-bg); }
+    .thread-q {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+      line-height: 1.4;
+    }
+    .thread-meta {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+    }
+    .thread-meta strong { color: var(--color-primary); font-weight: 500; }
+    .forum-preview-footer {
+      padding: var(--space-4) var(--space-6);
+      background: var(--color-bg);
+      text-align: center;
+    }
+    .forum-coming-soon {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Join Section ────────────────────────────────── */
+    .join-section {
+      padding: var(--space-20) 0;
+      text-align: center;
+    }
+    .join-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .join-eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold-deep);
+      margin-bottom: var(--space-5);
+    }
+    .join-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 400;
+      color: var(--color-text);
+      line-height: 1.15;
+      margin-bottom: var(--space-5);
+    }
+    .join-heading em { font-style: italic; color: var(--color-primary); }
+    .join-body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-bottom: var(--space-8);
+    }
+    .join-form {
+      display: flex;
+      gap: var(--space-3);
+      max-width: 460px;
+      margin: 0 auto var(--space-5);
+    }
+    @media (max-width: 500px) {
+      .join-form { flex-direction: column; }
+    }
+    .join-form input {
+      flex: 1;
+      padding: var(--space-4) var(--space-5);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      background: var(--color-surface);
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .join-form input:focus { border-color: var(--color-primary); }
+    .join-form input::placeholder { color: var(--color-text-faint); }
+    .join-btn {
+      padding: var(--space-4) var(--space-6);
+      background: var(--color-primary);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background var(--transition);
+    }
+    .join-btn:hover { background: var(--color-primary-hover); }
+    .join-note {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+    }
+    .join-members {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
+    .member-avatars {
+      display: flex;
+    }
+    .member-avatar {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--color-surface);
+      background: var(--color-gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--color-gold-deep);
+      margin-right: -8px;
+    }
+    .member-avatar:last-child { margin-right: 0; }
+    .member-count {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+    .member-count strong { color: var(--color-primary); font-weight: 600; }
+
+    /* ── Footer Brand Bar ────────────────────────────── */
+    .brand-bar {
+      background: var(--color-primary);
+      padding: var(--space-10) 0;
+      text-align: center;
+    }
+    .brand-bar-eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: var(--space-3);
+    }
+    .brand-bar-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2.5vw, 1.75rem);
+      font-style: italic;
+      font-weight: 300;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav-header" id="nav-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="RevelleCare home">
+        <span class="nav-logo-mark" aria-hidden="true">R</span>
+        <span class="nav-logo-text">
+          <span class="nav-logo-name">RevelleCare</span>
+          <span class="nav-logo-tagline">Prescription Skincare</span>
+        </span>
+      </a>
+      <ul class="nav-menu" role="list" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="science.html">The Science</a></li>
+        <li><a href="products.html">Treatment Areas</a></li>
+        <li><a href="collective.html" class="active">The Collective</a></li>
+        <li><a href="clinicians.html">Our Clinicians</a></li>
+        <li><a href="pharmacy.html">Pharmacy Network</a></li>
+        <li><a href="sab.html">Scientific Advisory Board</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode"></button>
+        <a href="index.html#waitlist" class="nav-cta">Join The Collective</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Masthead ─────────────────────────────────────── -->
+    <section class="collective-masthead">
+      <div class="container--narrow">
+        <div class="masthead-series-label">The RevelleCare Collective</div>
+        <h1 class="masthead-title">
+          The Science of<br /><em>Your Skin</em>
+        </h1>
+        <p class="masthead-description">
+          Evidence-based education, clinical insight, and honest conversations about women's prescription skin health — from hormonal changes and menopausal skin to pigmentation, rosacea, acne, and tretinoin. Written for women, by women who understand what you're going through.
+        </p>
+        <div class="masthead-meta">
+          <span>Education</span>
+          <span>Science</span>
+          <span>Community</span>
+          <span>Women's Skin Health</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Featured Article ──────────────────────────────── -->
+    <section class="featured-section">
+      <div class="container">
+        <p class="section-label">Featured — The Revelle Perspective</p>
+        <div class="featured-grid">
+          <div class="featured-image-wrap">
+            <div class="featured-image-placeholder">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="38" stroke="#0E6B68" stroke-width="2"/>
+                <path d="M25 50 Q40 20 55 50" stroke="#0E6B68" stroke-width="2" fill="none"/>
+                <circle cx="40" cy="28" r="4" fill="#0E6B68"/>
+              </svg>
+            </div>
+          </div>
+          <div class="featured-content">
+            <div class="featured-series-badge">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+              The Revelle Perspective · Issue No. 1
+            </div>
+            <h2 class="featured-title">
+              Menopause Is a Healthcare Issue.<br /><em>It's Time We Started Treating It Like One.</em>
+            </h2>
+            <p class="featured-excerpt">
+              For generations, women have been told that menopause is simply something to endure. Hot flashes, sleep disruption, brain fog, mood changes, skin changes — all dismissed as inevitable aging. That explanation overlooks an important truth. Menopause is a significant biological transition driven by changing hormone levels, and it deserves to be treated as the healthcare issue it is.
+            </p>
+            <div class="featured-byline">
+              <div class="byline-avatar">B</div>
+              <div class="byline-info">
+                <span class="byline-name">Brooke Lunney</span>
+                <span class="byline-role">Director of Communications, RevelleCare</span>
+              </div>
+            </div>
+            <a href="oped-menopause-healthcare-issue.html" class="read-article-btn">
+              Read the full article
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pull Quote ────────────────────────────────────── -->
+    <div class="pull-quote-section">
+      <div class="container--narrow">
+        <div class="pull-quote">
+          <blockquote>
+            "When women are left without information, they are also left without choices. Better education is one of the most powerful ways we can improve menopause care in Canada."
+          </blockquote>
+          <p class="pull-quote-source">Brooke Lunney — The Revelle Perspective, Issue No. 1</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Article Grid ──────────────────────────────────── -->
+    <section class="articles-section">
+      <div class="container">
+        <p class="section-label">The Revelle Perspective — Op-Eds &amp; Essays</p>
+        <div class="articles-grid">
+
+          <!-- Article 1 -->
+          <a href="oped-menopause-healthcare-issue.html" class="article-card">
+            <div class="card-image">
+              <div class="card-image-overlay"></div>
+              <span class="card-issue-number">Issue No. 1</span>
+              <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="22" stroke="#0E6B68" stroke-width="2"/>
+                <path d="M14 30 Q24 10 34 30" stroke="#0E6B68" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-series">The Revelle Perspective</p>
+              <h3 class="card-title">Menopause Is a Healthcare Issue. <em>It's Time We Treated It Like One.</em></h3>
+              <p class="card-excerpt">For generations, women have been told that menopause is simply something to endure. That explanation overlooks an important truth — and it's time for a reckoning.</p>
+              <div class="card-footer">
+                <span class="card-byline-name">Brooke Lunney</span>
+                <span class="card-read-link">
+                  Read
+                  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Article 2 -->
+          <a href="oped-canada-menopause-care.html" class="article-card">
+            <div class="card-image">
+              <div class="card-image-overlay"></div>
+              <span class="card-issue-number">Issue No. 2</span>
+              <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="28" height="28" rx="4" stroke="#0E6B68" stroke-width="2"/>
+                <path d="M16 24h16M16 18h10M16 30h12" stroke="#0E6B68" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-series">The Revelle Perspective</p>
+              <h3 class="card-title">What Canada Can Do to <em>Improve Menopause Care</em></h3>
+              <p class="card-excerpt">Improving menopause care in Canada doesn't require reinventing our healthcare system. It requires recognizing menopause for what it is: a significant stage of health that deserves thoughtful attention.</p>
+              <div class="card-footer">
+                <span class="card-byline-name">Brooke Lunney</span>
+                <span class="card-read-link">
+                  Read
+                  <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Coming Soon — Science Series -->
+          <div class="article-card article-card--coming-soon">
+            <div class="card-image">
+              <div class="card-image-overlay"></div>
+              <span class="card-issue-number">Issue No. 1</span>
+              <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="20" r="8" stroke="#0E6B68" stroke-width="2"/>
+                <path d="M12 38c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#0E6B68" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <span class="coming-soon-badge">Coming Soon</span>
+              <p class="card-series">The Science of Your Skin</p>
+              <h3 class="card-title">The Biology of <em>Menopausal Skin</em></h3>
+              <p class="card-excerpt">How estrogen loss changes your skin at the cellular level — and why understanding this biology is the first step to effective treatment.</p>
+              <div class="card-footer">
+                <span class="card-byline-name">Brooke Lunney</span>
+                <span class="card-read-link">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coming Soon — Science Series 2 -->
+          <div class="article-card article-card--coming-soon">
+            <div class="card-image">
+              <div class="card-image-overlay"></div>
+              <span class="card-issue-number">Issue No. 2</span>
+              <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 8 L38 38 L10 38 Z" stroke="#0E6B68" stroke-width="2" fill="none"/>
+                <circle cx="24" cy="26" r="4" stroke="#0E6B68" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="card-body">
+              <span class="coming-soon-badge">Coming Soon</span>
+              <p class="card-series">The Science of Your Skin</p>
+              <h3 class="card-title">Estrogen, Estriol, and <em>Your Skin Barrier</em></h3>
+              <p class="card-excerpt">What the clinical evidence says about topical estrogen therapy for menopausal skin — and how prescription compounding makes the difference.</p>
+              <div class="card-footer">
+                <span class="card-byline-name">Brooke Lunney</span>
+                <span class="card-read-link">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Community Section ─────────────────────────────── -->
+    <section class="community-section">
+      <div class="container">
+        <div class="community-inner">
+          <div>
+            <div class="masthead-series-label" style="justify-content:flex-start;">The Collective Community</div>
+            <h2 class="community-heading">A place where women <em>talk openly</em> about their skin</h2>
+            <p class="community-body">
+              The Collective is more than education — it's a community for every stage of a woman's skin health journey. Whether you're navigating hormonal skin changes, starting tretinoin for the first time, managing adult acne or pigmentation, or exploring what prescription skincare can do — this is your space to ask questions, share what's working, and hear from women with real experience. Our clinical team monitors conversations and contributes evidence-based responses.
+            </p>
+            <div class="community-pillars">
+              <div class="community-pillar">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 1a8 8 0 100 16A8 8 0 009 1zM9 6v4l3 2"/>
+                  </svg>
+                </div>
+                <div class="pillar-text">
+                  <span class="pillar-title">Real experiences, real women</span>
+                  <span class="pillar-desc">Members share what treatments have worked, what hasn't, and what they wish they'd known sooner.</span>
+                </div>
+              </div>
+              <div class="community-pillar">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 2l2.39 4.845L17 7.635l-4 3.899.944 5.466L9 14.5l-4.944 2.5L5 11.534 1 7.635l5.61-.79L9 2z"/>
+                  </svg>
+                </div>
+                <div class="pillar-text">
+                  <span class="pillar-title">Clinician-verified answers</span>
+                  <span class="pillar-desc">Our licensed Canadian healthcare practitioners review and respond to clinical questions with evidence-based guidance.</span>
+                </div>
+              </div>
+              <div class="community-pillar">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="9" cy="9" r="7"/>
+                    <path d="M6 9h6M9 6v6"/>
+                  </svg>
+                </div>
+                <div class="pillar-text">
+                  <span class="pillar-title">Private and moderated</span>
+                  <span class="pillar-desc">The Collective is a safe, moderated space — no spam, no ads, just honest conversation.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="forum-preview">
+              <div class="forum-preview-header">
+                <span class="forum-preview-title">Community Discussions</span>
+                <span class="forum-live-badge">
+                  <span class="forum-live-dot"></span>
+                  Launching September 2026
+                </span>
+              </div>
+              <div class="forum-thread">
+                <p class="thread-q">"Has anyone noticed their skin texture change dramatically in the past year? Mine feels completely different than it did at 45."</p>
+                <p class="thread-meta"><strong>12 women</strong> shared their experience · Clinician response included</p>
+              </div>
+              <div class="forum-thread">
+                <p class="thread-q">"I started the Estrogen Repair Cream 6 weeks ago. My forehead lines have genuinely softened. I wasn't expecting results this quickly."</p>
+                <p class="thread-meta"><strong>8 women</strong> found this helpful</p>
+              </div>
+              <div class="forum-thread">
+                <p class="thread-q">"What's the difference between the hormonal and non-hormonal cream? Would I use both?"</p>
+                <p class="thread-meta"><strong>Clinician answered</strong> · 5 follow-up questions</p>
+              </div>
+              <div class="forum-preview-footer">
+                <p class="forum-coming-soon">Community forum opens at launch · September 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Join CTA ───────────────────────────────────────── -->
+    <section class="join-section" id="join">
+      <div class="container">
+        <div class="join-inner">
+          <p class="join-eyebrow">Founding Members · Free to Join</p>
+          <h2 class="join-heading">
+            Be among the first women to <em>know</em>
+          </h2>
+          <p class="join-body">
+            Founding Members of The Collective receive early access to education content and first access to RevelleCare prescription skincare when we launch in September 2026 — whether you're navigating menopause, managing pigmentation, or beginning your tretinoin journey.
+          </p>
+          <form class="join-form" action="https://formspree.io/f/hello@revellecare.com" method="POST" onsubmit="handleJoin(event)">
+            <input type="email" name="email" placeholder="Your email address" required />
+            <button type="submit" class="join-btn">Join The Collective</button>
+          </form>
+          <p class="join-note">Free membership. No credit card. Unsubscribe anytime.</p>
+          <div class="join-members">
+            <div class="member-avatars">
+              <div class="member-avatar">S</div>
+              <div class="member-avatar">M</div>
+              <div class="member-avatar">J</div>
+              <div class="member-avatar">A</div>
+            </div>
+            <p class="member-count"><strong>22 women</strong> have already joined</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Brand Bar ─────────────────────────────────────── -->
+  <div class="brand-bar">
+    <p class="brand-bar-eyebrow">RevelleCare</p>
+    <p class="brand-bar-quote">"The moment a woman wakes up, looks in the mirror, and recognizes herself again."</p>
+  </div>
+
+  <!-- ── Footer ────────────────────────────────────────── -->
+  <footer class="site-footer" style="background:#111714;color:rgba(255,255,255,0.5);text-align:center;padding:2rem 1rem;font-family:var(--font-body);font-size:0.8rem;">
+    <p style="margin-bottom:0.5rem;">© 2026 RevelleCare Inc. · Quispamsis, NB · <a href="mailto:hello@revellecare.com" style="color:rgba(255,255,255,0.5);">hello@revellecare.com</a></p>
+    <p>RevelleCare connects women with independent licensed Canadian healthcare practitioners who provide medical services through our platform. RevelleCare does not practise medicine, does not prescribe medications, and does not direct the clinical judgment of any clinician. All prescriptions are issued solely by independent clinicians based on their clinical assessment.</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function handleJoin(e) {
+      e.preventDefault();
+      const email = e.target.querySelector('input[type="email"]').value;
+      alert('Thank you for joining The Collective! We\'ll be in touch as we approach our September 2026 launch.');
+    }
+  </script>
+</body>
+</html>
