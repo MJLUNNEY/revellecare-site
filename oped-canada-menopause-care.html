@@ -292,6 +292,14 @@
     .brand-bar { background: var(--color-primary); padding: var(--space-10) 0; text-align: center; }
     .brand-bar-eyebrow { font-family: var(--font-body); font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: var(--space-3); }
     .brand-bar-quote { font-family: var(--font-display); font-size: clamp(1.1rem, 2.5vw, 1.75rem); font-style: italic; font-weight: 300; color: #fff; }
+
+    .article-hero-image {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -326,6 +334,8 @@
   </header>
 
   <main>
+    <img src="assets/images/oped-02-missing-chapter.jpg" class="article-hero-image" alt="The Missing Chapter — a woman stands before a giant open medical textbook open to a chapter on Menopause" />
+
     <header class="article-header">
       <div class="container--article">
         <a href="collective.html" class="article-series-back">
