@@ -1,0 +1,51 @@
+/* Educational articles remain distinct from The Revelle Perspective. */
+.education-page { --reading-width: 70ch; }
+.education-page .education-header { position: relative; top: auto; background: var(--color-bg); border-bottom: 1px solid var(--color-divider); padding: var(--space-5) var(--space-6); }
+.education-page .education-header .nav-inner { max-width: var(--content-wide); margin-inline: auto; }
+.education-page .nav-menu a { color: var(--color-text); }
+.education-page .nav-menu a.active { color: var(--color-primary); }
+.edu-wrap { max-width: var(--content-wide); margin-inline: auto; padding-inline: var(--space-6); }
+.edu-masthead { padding-block: var(--space-16) var(--space-12); max-width: 850px; }
+.edu-eyebrow { color: var(--color-primary); font-size: var(--text-sm); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: var(--space-4); }
+.edu-masthead h1, .edu-article h1 { font-family: var(--font-display); font-weight: 500; font-size: var(--text-2xl); line-height: 1.1; margin-bottom: var(--space-6); }
+.edu-intro { max-width: 65ch; font-size: var(--text-base); line-height: 1.7; color: var(--color-text-muted); }
+.edu-tabs { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-8); }
+.edu-tabs a { display: inline-flex; align-items: center; min-height: 44px; padding: var(--space-3) var(--space-5); border: 1px solid var(--color-border); border-radius: var(--radius-full); font-size: var(--text-sm); color: var(--color-text); }
+.edu-tabs a[aria-current="page"] { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-text-inverse); }
+.edu-feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-12); align-items: center; padding-bottom: var(--space-16); }
+.edu-feature img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }
+.edu-feature h2 { font-family: var(--font-display); font-weight: 500; font-size: var(--text-2xl); line-height: 1.15; margin-block: var(--space-4) var(--space-6); }
+.edu-feature p { font-size: var(--text-base); line-height: 1.7; margin-bottom: var(--space-6); }
+.edu-meta { color: var(--color-text-muted); font-size: var(--text-sm); }
+.edu-button { display: inline-flex; align-items: center; min-height: 48px; padding: var(--space-3) var(--space-6); border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-text-inverse); font-size: var(--text-sm); font-weight: 500; }
+.edu-button:hover { background: var(--color-primary-hover); color: var(--color-text-inverse); }
+.edu-back { display: inline-block; color: var(--color-primary); font-size: var(--text-sm); padding-block: var(--space-4); margin-bottom: var(--space-6); text-decoration: underline; text-underline-offset: .2em; }
+.edu-article { max-width: var(--reading-width); margin-inline: auto; padding-block: var(--space-8) var(--space-16); }
+.edu-article .edu-cover { display: block; width: 100%; height: auto; margin-block: var(--space-8) var(--space-12); border-radius: var(--radius-lg); }
+.edu-article h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 500; line-height: 1.2; margin-block: var(--space-10) var(--space-5); }
+.edu-article p, .edu-article li { font-size: var(--text-base); line-height: 1.8; }
+.edu-article p { margin-bottom: var(--space-6); }
+.edu-article ul, .edu-article ol { padding-left: var(--space-6); margin-bottom: var(--space-6); }
+.edu-article li { margin-bottom: var(--space-3); }
+.edu-callout { padding: var(--space-6); margin-block: var(--space-8); background: var(--color-surface-teal); border-left: 3px solid var(--color-primary); }
+.edu-callout h2 { margin-top: 0; }
+.edu-callout p:last-child { margin-bottom: 0; }
+.edu-sources { border-top: 1px solid var(--color-border); padding-top: var(--space-3); margin-top: var(--space-10); }
+.edu-sources a { color: var(--color-primary); text-decoration: underline; text-underline-offset: .2em; overflow-wrap: anywhere; }
+.edu-footer { border-top: 1px solid var(--color-border); padding-block: var(--space-8); }
+.edu-footer p { max-width: 80ch; color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.7; margin-bottom: var(--space-4); }
+.edu-footer a { text-decoration: underline; text-underline-offset: .2em; }
+.edu-skip { position: absolute; left: var(--space-4); top: -100px; background: var(--color-bg); padding: var(--space-4); z-index: 200; }
+.edu-skip:focus { top: var(--space-4); }
+.education-page :focus-visible { outline: 3px solid var(--color-primary); outline-offset: 4px; }
+@media (max-width: 900px) {
+  .edu-feature { grid-template-columns: 1fr; gap: var(--space-8); }
+  .edu-masthead { padding-top: var(--space-10); }
+  .education-page .nav-actions { position: relative; z-index: 101; }
+  .education-page .nav-menu a { font-size: var(--text-base); font-family: var(--font-body); }
+}
+@media (max-width: 480px) {
+  .education-page .education-header { padding-inline: var(--space-4); }
+  .education-page .education-header .nav-inner { gap: var(--space-3); }
+  .edu-wrap { padding-inline: var(--space-5); }
+}
