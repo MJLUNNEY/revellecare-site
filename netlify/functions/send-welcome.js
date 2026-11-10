@@ -25,11 +25,11 @@ Thank you for being here.
 
 What you just did — raising your hand and saying I want this — is the first step toward skin that reflects how you actually feel inside. We built RevelleCare for exactly this moment.
 
-In early 2027, we will open our doors in Ontario and British Columbia, bringing Canada's first prescription compounded skincare formulated specifically for the skin changes of perimenopause and menopause. No more adapting products designed for someone else's biology. No more being told it's just aging.
+In early 2027, we will open our doors in Ontario and British Columbia with personalized prescription skincare for women at every age and stage of life. Whether you are navigating breakouts in your twenties, redness or dark spots in your thirties, or the changes that come with perimenopause and menopause, your care will begin with you: your skin, your story, and a licensed clinician who truly listens. No more guessing in the beauty aisle. No more being told to just live with it.
 
 You will be among the very first to know when we launch — with priority access before we open to the public.
 
-Until then, we will be in touch with the science behind why your skin changes during this transition, what makes our formulations different, and how our care process works. No spam. No noise. Just the information you deserve.
+Until then, we will be in touch with the science behind how your skin changes through every stage of life, how our personalized care works, and what makes it different. No spam. No noise. Just the information you deserve.
 
 Revelle is the moment a woman wakes up, looks in the mirror, and recognizes herself again.
 
@@ -46,9 +46,9 @@ revellecare.com`;
       <p style="font-size: 17px; line-height: 1.7; margin-bottom: 20px;">Dear ${firstName},</p>
       <p style="font-size: 17px; line-height: 1.7; margin-bottom: 20px;">Thank you for being here.</p>
       <p style="font-size: 17px; line-height: 1.7; margin-bottom: 20px;">What you just did &mdash; raising your hand and saying <em>I want this</em> &mdash; is the first step toward skin that reflects how you actually feel inside. We built RevelleCare for exactly this moment.</p>
-      <p style="font-size: 17px; line-height: 1.7; margin-bottom: 20px;">In early 2027, we will open our doors in Ontario and British Columbia, bringing Canada&rsquo;s first prescription compounded skincare formulated specifically for the skin changes of perimenopause and menopause. No more adapting products designed for someone else&rsquo;s biology. No more being told it&rsquo;s just aging.</p>
+      <p style="font-size: 17px; line-height: 1.7; margin-bottom: 20px;">In early 2027, we will open our doors in Ontario and British Columbia with personalized prescription skincare for women at every age and stage of life. Whether you are navigating breakouts in your twenties, redness or dark spots in your thirties, or the changes that come with perimenopause and menopause, your care will begin with you: your skin, your story, and a licensed clinician who truly listens. No more guessing in the beauty aisle. No more being told to just live with it.</p>
       <p style="font-size: 17px; line-height: 1.7; margin-bottom: 20px;">You will be among the very first to know when we launch &mdash; with priority access before we open to the public.</p>
-      <p style="font-size: 17px; line-height: 1.7; margin-bottom: 20px;">Until then, we will be in touch with the science behind why your skin changes during this transition, what makes our formulations different, and how our care process works. No spam. No noise. Just the information you deserve.</p>
+      <p style="font-size: 17px; line-height: 1.7; margin-bottom: 20px;">Until then, we will be in touch with the science behind how your skin changes through every stage of life, how our personalized care works, and what makes it different. No spam. No noise. Just the information you deserve.</p>
       <p style="font-size: 17px; line-height: 1.7; margin-bottom: 30px; font-style: italic; color: #0E6B68;">Revelle is the moment a woman wakes up, looks in the mirror, and recognizes herself again.</p>
       <p style="font-size: 17px; line-height: 1.7; margin-bottom: 30px;">That moment is coming. We are building it for you.</p>
       <p style="font-size: 17px; line-height: 1.7; margin-bottom: 5px;">With gratitude,</p>
