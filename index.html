@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RevelleCare — Personalized Prescription Skincare for Women · Launching Fall 2026</title>
-  <meta name="description" content="RevelleCare is a Canadian prescription dermatology platform connecting women with licensed clinicians who treat estrogen-deficiency skin conditions — prescribed, compounded, and delivered to your door. Launching Fall 2026 in Ontario and British Columbia." />
+  <title>RevelleCare — Medicine for your skin &amp; health · Personalized prescription care for women</title>
+  <meta name="description" content="Start with your concern. RevelleCare connects women with licensed Canadian clinicians for personalized prescription care, compounded by a licensed pharmacy and delivered to your door. Launching Q1 2027 in Ontario and British Columbia." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,19 +15,19 @@
   <link rel="stylesheet" href="tokens.css" />
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="nav.css" />
-  <link rel="stylesheet" href="home.css" />
-  <link rel="stylesheet" href="prelaunch.css" />
+    <link rel="stylesheet" href="prelaunch.css" />
+  <link rel="stylesheet" href="home-concern.css" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28' font-family='Georgia,serif' font-style='italic' fill='%230E6B68'>R</text></svg>" />
 </head>
-<body>
+<body class="cf-home">
 
   <!-- ═══════════════════════════════════════════════
        PRE-LAUNCH BANNER
   ═══════════════════════════════════════════════ -->
   <div class="prelaunch-banner" role="banner" aria-label="Pre-launch notice">
-    <strong>Coming Fall 2026</strong> &nbsp;·&nbsp; RevelleCare is currently in pre-launch. Products and services are not yet available. &nbsp;
+    <strong>Coming Q1 2027</strong> &nbsp;·&nbsp; RevelleCare is currently in pre-launch. Products and services are not yet available. &nbsp;
     <a href="index.html#collective">Join The Collective →</a>
   </div>
 
@@ -47,16 +47,11 @@
         </a>
 
         <ul class="nav-menu" role="list" id="nav-menu">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="science.html">The Science</a></li>
-        <li><a href="education.html">Education</a></li>
-          <li><a href="collective.html">The Collective</a></li>
-          <li><a href="products.html">Treatment Areas</a></li>
-          <li><a href="clinicians.html">Our Clinicians</a></li>
-          <li><a href="pharmacy.html">Pharmacy Network</a></li>
+          <li><a href="#concerns">Shop by Concern</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="sab.html">Scientific Advisory Board</a></li>
+          <li><a href="science.html">The Science</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="clinicians.html">Our Clinicians</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
 
@@ -74,371 +69,223 @@
 
   <main>
 
-    <!-- ═══════════════════════════════════════════════
-         HERO
-    ═══════════════════════════════════════════════ -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero-left">
-        <span class="coming-soon-pill">Launching Fall 2026</span>
-
-        <h1 class="hero-headline" style="margin-top:var(--space-5);">
-          Medicine for your skin.<br>
-          <em>Personalized for your life.</em>
-        </h1>
-
-        <p class="hero-sub">
-          RevelleCare connects women with licensed clinicians who prescribe compounded skincare treatments rooted in the science of how hormones shape your skin — at every age, every stage. Launching Fall 2026 in Ontario &amp; British Columbia.
-        </p>
-
-        <div class="hero-actions">
-          <a href="index.html#collective" class="btn btn-primary">Join The Collective</a>
-          <a href="science.html" class="btn btn-outline">Explore the Science</a>
+    <!-- ═══ HERO — concern-first ═══ -->
+    <section class="cf-hero" aria-labelledby="cf-hero-title">
+      <img class="cf-hero-img" src="assets/images/home/hero.jpg" alt="A woman in her fifties with silver-streaked hair, touching her cheek and smiling softly by a window" width="1920" height="1280" fetchpriority="high" />
+      <div class="cf-hero-scrim" aria-hidden="true"></div>
+      <div class="container cf-hero-inner">
+        <p class="cf-eyebrow">Launching Q1 2027 · Ontario &amp; British Columbia</p>
+        <h1 class="cf-hero-title" id="cf-hero-title">Medicine for your<br><em>skin &amp; health.</em></h1>
+        <p class="cf-hero-sub">Personalized prescription care for women, prescribed by a licensed Canadian clinician and delivered to your door.</p>
+        <div class="cf-hero-actions">
+          <a href="#concerns" class="btn cf-btn-light">Find your care</a>
+          <a href="#collective" class="btn cf-btn-ghost-light">Join The Collective</a>
         </div>
-
-        <div class="hero-trust">
-          <div class="hero-trust-item">
-            <span class="hero-trust-value">+75%</span>
-            <span class="hero-trust-label">epidermal thickness restored</span>
-          </div>
-          <div class="hero-trust-item">
-            <span class="hero-trust-value">+88%</span>
-            <span class="hero-trust-label">skin elasticity improvement</span>
-          </div>
-          <div class="hero-trust-item">
-            <span class="hero-trust-value">+38%</span>
-            <span class="hero-trust-label">collagen density increase</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right" aria-hidden="true">
-        <div class="hero-image-wrap">
-          <div class="hero-brand-overlay">
-            <span class="hero-brand-name">RevelleCare</span>
-            <span class="hero-brand-sub">Personalized Prescription Skincare</span>
-          </div>
-          <img
-            src="products_collection_final.png"
-            alt="RevelleCare prescription skincare collection — coming Fall 2026"
-            loading="eager"
-            fetchpriority="high"
-          />
-        </div>
-        <div class="hero-overlay"></div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         STATS BAR
-    ═══════════════════════════════════════════════ -->
-    <section class="stats-bar" aria-label="Key statistics">
+    <!-- ═══ TRUST STRIP ═══ -->
+    <section class="cf-trust" aria-label="Why women can trust RevelleCare">
       <div class="container">
-        <div class="stats-inner">
-          <div class="stat-item reveal">
-            <span class="stat-value">12M+</span>
-            <span class="stat-label">Canadian women affected by estrogen-deficiency skin conditions</span>
-            <span class="stat-source">Statistics Canada</span>
-          </div>
-          <div class="stat-item reveal reveal-delay-1">
-            <span class="stat-value">61–100%</span>
-            <span class="stat-label">wrinkle reduction with topical estrogen</span>
-            <span class="stat-source">Schmidt et al., 1996</span>
-          </div>
-          <div class="stat-item reveal reveal-delay-2">
-            <span class="stat-value">1:1</span>
-            <span class="stat-label">personalized treatment plan — prescribed for your individual needs</span>
-            <span class="stat-source">Every prescription is yours alone</span>
-          </div>
-          <div class="stat-item reveal reveal-delay-3">
-            <span class="stat-value">Fall 2026</span>
-            <span class="stat-label">planned launch in Ontario &amp; British Columbia</span>
-            <span class="stat-source">Phase 1 · Canada</span>
-          </div>
-        </div>
+        <ul class="cf-trust-list" role="list">
+          <li><span class="cf-trust-mark" aria-hidden="true"></span>Licensed Canadian clinicians</li>
+          <li><span class="cf-trust-mark" aria-hidden="true"></span>Provincially licensed compounding pharmacy</li>
+          <li><span class="cf-trust-mark" aria-hidden="true"></span>Scientific Advisory Board chaired by Dr. M. Joanne Lemieux, PhD</li>
+          <li><span class="cf-trust-mark" aria-hidden="true"></span>Canadian-founded, built in New Brunswick</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         HOW IT WORKS
-    ═══════════════════════════════════════════════ -->
-    <section class="how-it-works section" id="how-it-works" aria-labelledby="how-title">
-      <div class="container container--default">
-        <header class="section-header reveal">
-          <p class="section-label">The Model</p>
-          <h2 class="section-title" id="how-title">Prescription skincare,<br><em>beautifully delivered</em></h2>
-          <p class="section-desc">When RevelleCare launches in Fall 2026, care will be delivered in three simple steps — from your first consultation to your door.</p>
+    <!-- ═══ SHOP BY CONCERN ═══ -->
+    <section class="section cf-concerns" id="concerns" aria-labelledby="concerns-title">
+      <div class="container">
+        <header class="cf-section-head reveal">
+          <p class="cf-label">Start with your concern</p>
+          <h2 class="cf-title" id="concerns-title">What can we <em>help with?</em></h2>
+          <p class="cf-lede">Care at RevelleCare starts with what you're experiencing, not with a product. Choose the concern that matters most to you and a licensed clinician will take it from there.</p>
         </header>
 
-        <div class="steps-grid">
-          <div class="step-card reveal">
-            <div class="step-number" aria-hidden="true"><em>1</em></div>
-            <h3 class="step-title">Complete Your Assessment</h3>
-            <p class="step-desc">You will answer a brief intake about your skin, hormonal health, and goals. Our clinical questionnaire will screen for candidacy in minutes.</p>
+        <div class="cf-matcher reveal" aria-labelledby="matcher-title">
+          <p class="cf-matcher-title" id="matcher-title">Not sure where to start? Tell us what you're noticing.</p>
+          <div class="cf-chips" role="group" aria-label="Symptoms you're noticing">
+            <button type="button" class="cf-chip" aria-pressed="false" data-match="hormonal">Drier, thinner skin</button>
+            <button type="button" class="cf-chip" aria-pressed="false" data-match="hormonal lines">Loss of firmness</button>
+            <button type="button" class="cf-chip" aria-pressed="false" data-match="lines">Fine lines or rough texture</button>
+            <button type="button" class="cf-chip" aria-pressed="false" data-match="acne">Breakouts along the jaw</button>
+            <button type="button" class="cf-chip" aria-pressed="false" data-match="pigmentation">Dark patches or uneven tone</button>
+            <button type="button" class="cf-chip" aria-pressed="false" data-match="redness">Flushing or redness</button>
+            <button type="button" class="cf-chip" aria-pressed="false" data-match="intimate">Intimate dryness or discomfort</button>
+            <button type="button" class="cf-chip" aria-pressed="false" data-match="hair">Thinning at the part</button>
           </div>
-          <div class="step-card reveal reveal-delay-1">
-            <div class="step-number" aria-hidden="true"><em>2</em></div>
-            <h3 class="step-title">Meet Your Practitioner</h3>
-            <p class="step-desc">A licensed Canadian healthcare practitioner will review your profile via telemedicine. If clinically appropriate, they will prescribe your personalized formulation.</p>
-          </div>
-          <div class="step-card reveal reveal-delay-2">
-            <div class="step-number" aria-hidden="true"><em>3</em></div>
-            <h3 class="step-title">Receive &amp; Renew</h3>
-            <p class="step-desc">Your compounded prescription will be dispensed by a licensed Canadian pharmacy and delivered to your door. Ongoing monitoring and renewal will be included.</p>
-          </div>
+          <p class="cf-matcher-result" aria-live="polite"></p>
         </div>
 
-        <div class="prelaunch-disclaimer reveal" style="max-width:640px;margin-inline:auto;margin-top:clamp(2rem,4vw,3rem);">
-          <p><strong>Please note:</strong> RevelleCare is currently in pre-launch development. The service model described above represents our planned offering, pending Health Canada regulatory review, licensed healthcare practitioner partnerships, and compounding pharmacy agreements. No products or services are currently available for purchase or prescription.</p>
+        <div class="cf-grid" id="concern-grid"></div>
+      </div>
+    </section>
+
+    <!-- ═══ HOW IT WORKS ═══ -->
+    <section class="section cf-how" id="how-it-works" aria-labelledby="how-title">
+      <div class="container cf-how-inner">
+        <div class="cf-how-media reveal">
+          <img src="assets/images/home/consult.jpg" alt="A woman at her kitchen table having a video consultation on her laptop" loading="lazy" width="900" height="675" />
+        </div>
+        <div class="cf-how-copy reveal reveal-delay-1">
+          <p class="cf-label">How it works</p>
+          <h2 class="cf-title" id="how-title">From your concern <em>to your care</em></h2>
+          <ol class="cf-steps" role="list">
+            <li>
+              <span class="cf-step-num" aria-hidden="true">1</span>
+              <div><h3>Choose your concern</h3><p>Start with what you're noticing in your skin or body, in your own words.</p></div>
+            </li>
+            <li>
+              <span class="cf-step-num" aria-hidden="true">2</span>
+              <div><h3>Complete an online assessment</h3><p>Share your health history, life stage and goals, then connect with a licensed Canadian clinician for a consultation.</p></div>
+            </li>
+            <li>
+              <span class="cf-step-num" aria-hidden="true">3</span>
+              <div><h3>Receive personalized care</h3><p>If treatment is appropriate, your clinician prescribes it, a licensed pharmacy compounds it for you, and it's delivered to your door with ongoing follow-up.</p></div>
+            </li>
+          </ol>
+          <p class="cf-fineprint">An assessment does not guarantee a prescription. Every treatment decision is made by your clinician.</p>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         PRODUCTS PREVIEW
-    ═══════════════════════════════════════════════ -->
-    <section class="products-preview section" aria-labelledby="products-title">
-      <div class="container container--default">
-        <header class="section-header reveal">
-          <span class="coming-soon-pill" style="margin-bottom:var(--space-4);display:inline-flex;">Coming Fall 2026</span>
-          <p class="section-label" style="margin-top:var(--space-3);">The Collection</p>
-          <h2 class="section-title" id="products-title">Personalized care,<br><em>your prescription</em></h2>
-          <p class="section-desc">Every treatment plan is prescribed by a licensed Canadian healthcare practitioner based on your individual assessment. If clinically appropriate, your prescription is compounded specifically for you by our licensed pharmacy partner. Not yet available.</p>
+    <!-- ═══ WHY CONCERN-FIRST ═══ -->
+    <section class="section cf-why" aria-labelledby="why-title">
+      <div class="container">
+        <header class="cf-section-head reveal">
+          <p class="cf-label">Why concern-first</p>
+          <h2 class="cf-title" id="why-title">You are not <em>a product category</em></h2>
         </header>
-
-        <div class="products-grid">
-
-          <!-- Product 1 -->
-          <article class="product-card reveal">
-            <div class="product-card-image">
-              <img src="product_revelle_creme.png" alt="RevelleCare Revelle Crème" loading="lazy" />
-            </div>
-            <div class="product-card-body">
-              <span class="product-card-rx">Prescription Required</span>
-              <h3 class="product-card-name">Hormonal Skin Conditions</h3>
-              <p class="product-card-actives">Hormonal skin care · Clinician-prescribed</p>
-              <p class="product-card-desc">If clinically appropriate after your assessment, your nurse practitioner may prescribe a personalized topical treatment for estrogen-deficiency skin thinning, dryness, and collagen loss. Each prescription is prepared specifically for you.</p>
-              <a href="products.html" class="product-card-link">Learn more <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-          <!-- Product 2 -->
-          <article class="product-card reveal reveal-delay-1">
-            <div class="product-card-image">
-              <img src="product_night_renewal_new.png" alt="RevelleCare Night Renewal Crème" loading="lazy" />
-            </div>
-            <div class="product-card-body">
-              <span class="product-card-rx">Prescription Required</span>
-              <h3 class="product-card-name">Overnight Skin Renewal</h3>
-              <p class="product-card-actives">Retinoid-based care · Clinician-prescribed</p>
-              <p class="product-card-desc">A clinician-directed nighttime regimen tailored to your skin and stage. Your nurse practitioner selects the appropriate strength for you, including a gentler starter option for first-time users.</p>
-              <a href="products.html" class="product-card-link">Learn more <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-          <!-- Product 3 -->
-          <article class="product-card reveal reveal-delay-2">
-            <div class="product-card-image">
-              <img src="product_radiance_creme.png" alt="RevelleCare Radiance Crème" loading="lazy" />
-            </div>
-            <div class="product-card-body">
-              <span class="product-card-rx" style="background:var(--color-gold-light);color:var(--color-gold-deep);border-color:var(--color-gold);">Non-Rx</span>
-              <h3 class="product-card-name">Radiance Crème</h3>
-              <p class="product-card-actives">Vitamin B3 · Vitamin C · Vitamin E · Peptides</p>
-              <p class="product-card-desc">A high-performance companion for those who prefer non-hormonal support. Antioxidant-rich with collagen-stimulating peptides for visible renewal.</p>
-              <a href="products.html" class="product-card-link">Learn more <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-          <article class="product-card reveal reveal-delay-3">
-            <div class="product-card-image">
-              <img src="product_intimate_renewal.png" alt="RevelleCare Intimate Renewal Crème" loading="lazy" />
-            </div>
-            <div class="product-card-body">
-              <span class="product-card-rx">Prescription Required</span>
-              <h3 class="product-card-name">Intimate Wellness</h3>
-              <p class="product-card-actives">Intimate skin care · Clinician-prescribed</p>
-              <p class="product-card-desc">Personalized treatment for estrogen-related intimate discomfort and genitourinary symptoms, prescribed by your clinician when medically appropriate and compounded specifically for you.</p>
-              <a href="products.html#intimate-estriol" class="product-card-link">Learn more <span class="arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-
-        </div>
-
-        <div style="text-align:center;margin-top:clamp(2.5rem,5vw,4rem);" class="reveal">
-          <a href="products.html" class="btn btn-outline">Explore Treatment Areas</a>
+        <div class="cf-compare reveal reveal-delay-1">
+          <div class="cf-compare-col cf-compare-col--muted">
+            <h3>The beauty aisle</h3>
+            <ul role="list">
+              <li>Starts with a bottle on a shelf</li>
+              <li>One formula for everyone</li>
+              <li>Chosen by marketing, packaging and price</li>
+              <li>No one asks about your hormones, history or health</li>
+              <li>You're on your own if it doesn't work</li>
+            </ul>
+          </div>
+          <div class="cf-compare-col cf-compare-col--brand">
+            <h3>RevelleCare</h3>
+            <ul role="list">
+              <li>Starts with you and what you're experiencing</li>
+              <li>Assessed by a licensed Canadian clinician</li>
+              <li>Prescribed only when medically appropriate</li>
+              <li>Compounded for you by a licensed pharmacy</li>
+              <li>Ongoing follow-up as your skin and life change</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         SCIENCE TEASER
-    ═══════════════════════════════════════════════ -->
-    <section class="science-teaser section" aria-labelledby="science-title">
-      <div class="container container--default">
-        <div class="science-teaser-inner">
-
-          <div class="science-teaser-left reveal">
-            <p class="science-teaser-label">Evidence-Based</p>
-            <h2 class="science-teaser-title" id="science-title">
-              Decades of research.<br>
-              <em>One elegant protocol.</em>
-            </h2>
-            <p class="science-teaser-desc">
-              RevelleCare's clinical approach is grounded in peer-reviewed evidence on estrogen-deficiency skin conditions. Your clinician draws on decades of dermatological research to determine the treatment plan that may be right for you.
-            </p>
-            <a href="science.html" class="btn btn-ghost">Explore the Science</a>
-          </div>
-
-          <div class="evidence-cards reveal reveal-delay-1">
-            <div class="evidence-card">
-              <div class="evidence-stat">+75%</div>
-              <p class="evidence-desc">Increase in epidermal thickness with prescription topical estrogen therapy</p>
-              <p class="evidence-study">Moraes et al., 2009</p>
-            </div>
-            <div class="evidence-card">
-              <div class="evidence-stat">61–100%</div>
-              <p class="evidence-desc">Wrinkle reduction with prescription topical estrogen therapy in clinical studies</p>
-              <p class="evidence-study">Schmidt et al., 1996</p>
-            </div>
-            <div class="evidence-card">
-              <div class="evidence-stat">+88%</div>
-              <p class="evidence-desc">Improvement in skin elasticity with prescription topical estrogen therapy</p>
-              <p class="evidence-study">Alloy / Draelos, 2024</p>
-            </div>
-            <div class="evidence-card">
-              <div class="evidence-stat">+38%</div>
-              <p class="evidence-desc">Increase in dermal collagen density with prescription topical estrogen therapy</p>
-              <p class="evidence-study">Fuchs et al., 2003</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════
-         ABOUT FOUNDER
-    ═══════════════════════════════════════════════ -->
-    <section class="about-founder section" id="about" aria-labelledby="founder-title">
-      <div class="container container--default">
-
-          <div class="founder-visual reveal">
-            <div class="founder-monogram" aria-hidden="false">
-              <img src="michele-lunney-headshot.jpg" alt="Michèle Lunney, Founder & CEO of RevelleCare" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-            </div>
-            <div class="founder-quote-badge" role="complementary">
-              <p class="founder-quote-text">"Prescription science and modern luxury — finally, for every stage of a woman's skin."</p>
-              <p class="founder-quote-attr">— Michele Lunney, Founder &amp; CEO</p>
-            </div>
-          </div>
-
-          <div class="founder-content reveal reveal-delay-1">
-            <p class="founder-label">Our Founder</p>
-            <h2 class="founder-name" id="founder-title">Michele Lunney</h2>
-            <p class="founder-title">Founder &amp; CEO, RevelleCare</p>
-            <p class="founder-bio">
-              With nearly two decades at the intersection of healthcare, innovation, and highly regulated sectors, Michele built her career around growth strategy, commercialization, and high-value partnerships.
-            </p>
-            <p class="founder-bio" style="margin-top:var(--space-4);">
-              She founded RevelleCare to close the gap in women's healthcare — where prescription dermatology meets the real, evolving needs of women's skin at every age and every stage of life. Clinical precision. Personalized care. Finally, both.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════
-         PERIMENOPAUSE EDUCATION STRIP
-    ═══════════════════════════════════════════════ -->
-    <section class="section section--sm" style="background:var(--color-surface-2);" aria-labelledby="edu-title">
-      <div class="container container--default">
-        <header class="section-header reveal" style="margin-bottom:clamp(var(--space-8),4vw,var(--space-12));">
-          <p class="section-label">Understanding the Transition</p>
-          <h2 class="section-title" id="edu-title">Why skin changes<br><em>as hormones shift</em></h2>
+    <!-- ═══ CARE TEAM ═══ -->
+    <section class="section cf-team" aria-labelledby="team-title">
+      <div class="container">
+        <header class="cf-section-head reveal">
+          <p class="cf-label">Your care team</p>
+          <h2 class="cf-title" id="team-title">Clinical care, <em>independently led</em></h2>
         </header>
-        <div class="edu-grid reveal reveal-delay-1">
-          <div class="edu-card">
-            <div class="edu-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M16 8v8l5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <h3 class="edu-title">Estrogen Decline</h3>
-            <p class="edu-desc">Estrogen is the primary regulator of skin collagen, hydration, and cell turnover. As levels drop — starting as early as your mid-30s — skin loses up to 30% of its collagen in the first five years of estrogen decline.</p>
-          </div>
-          <div class="edu-card">
-            <div class="edu-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M10 16h12M16 10v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <h3 class="edu-title">Barrier Disruption</h3>
-            <p class="edu-desc">Reduced estrogen compromises the skin barrier, leading to increased transepidermal water loss, sensitivity, and impaired healing — changes that standard moisturizers cannot fully address.</p>
-          </div>
-          <div class="edu-card">
-            <div class="edu-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 24C8 17.373 11.582 12 16 12s8 5.373 8 12" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
-            </div>
-            <h3 class="edu-title">The Rx Difference</h3>
-            <p class="edu-desc">Only prescription-strength topical treatments can act on the dermal receptors responsible for collagen synthesis and elastin production. RevelleCare connects you with a licensed clinician who can prescribe what over-the-counter products simply cannot provide.</p>
-          </div>
+        <div class="cf-team-grid">
+          <a class="cf-team-card reveal" href="clinicians.html">
+            <h3>Licensed clinicians</h3>
+            <p>Independent licensed Canadian healthcare practitioners review every assessment and make every prescribing decision.</p>
+            <span class="cf-link">Meet our clinicians →</span>
+          </a>
+          <a class="cf-team-card reveal reveal-delay-1" href="pharmacy.html">
+            <h3>RevelleCare Pharmacy Network</h3>
+            <p>Prescriptions are prepared and dispensed by a licensed compounding pharmacy regulated by its provincial college of pharmacy.</p>
+            <span class="cf-link">About our pharmacy →</span>
+          </a>
+          <a class="cf-team-card reveal reveal-delay-2" href="sab.html">
+            <h3>Scientific Advisory Board</h3>
+            <p>Chaired by Dr. M. Joanne Lemieux, PhD, our advisors guide the science and evidence behind our approach.</p>
+            <span class="cf-link">Meet the board →</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         THE COLLECTIVE (replaces CTA Banner)
-    ═══════════════════════════════════════════════ -->
-    <section class="section" id="collective" aria-labelledby="collective-title" style="padding-top: clamp(var(--space-24), 10vw, var(--space-40));">
+    <!-- ═══ FOUNDER ═══ -->
+    <section class="section cf-founder" id="about" aria-labelledby="founder-title">
+      <div class="container cf-founder-inner">
+        <img class="cf-founder-img reveal" src="michele-lunney-headshot.jpg" alt="Michèle Lunney, Founder and CEO of RevelleCare" loading="lazy" />
+        <div class="reveal reveal-delay-1">
+          <p class="cf-label">Our founder</p>
+          <blockquote class="cf-quote">"Women shouldn't have to guess their way down a beauty aisle. Care should begin with what you're experiencing and the clinician who can help."</blockquote>
+          <p class="cf-quote-attr"><strong id="founder-title">Michèle Lunney</strong> · Founder &amp; CEO, RevelleCare</p>
+          <p class="cf-founder-bio">With nearly two decades at the intersection of healthcare, innovation and highly regulated sectors, Michèle founded RevelleCare to close the gap in women's healthcare, where prescription dermatology meets the real, changing needs of women's skin at every stage of life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ THE COLLECTIVE ═══ -->
+    <section class="section cf-collective" id="collective" aria-labelledby="collective-title">
       <div class="container container--narrow">
-        <div class="collective-section reveal">
-          <span class="coming-soon-pill" style="margin-bottom:var(--space-6);">Launching Fall 2026</span>
-          <h2 class="collective-title" id="collective-title">
-            Be the first to know<br>
-            <em>when we launch</em>
-          </h2>
-          <p class="collective-desc">
-            Join The Collective and be notified the moment we open in Ontario &amp; British Columbia. No obligation. No spam.
-          </p>
-         <form class="collective-form" name="collective" netlify netlify-honeypot="bot-field" aria-label="Collective signup" id="collective-form">
-  <input type="hidden" name="form-name" value="collective" />
-  <p class="bot-field" style="display:none;"><label>Do not fill this out: <input name="bot-field" /></label></p>
-  <input type="text" class="collective-input" name="name" id="field-name" placeholder="What should we call you? (optional)" autocomplete="given-name" aria-label="First name (optional)" />
-  <input type="email" class="collective-input" name="email" id="field-email" placeholder="Your email address" required aria-label="Email address" />
-  <button type="submit" class="btn btn-primary">Notify Me</button>
-</form>
-<script>
-(function() {
-  var form = document.getElementById('collective-form');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var name = document.getElementById('field-name').value.trim();
-    var email = document.getElementById('field-email').value.trim();
-    var netlifyData = new FormData(form);
-
-    // 1. Submit to Netlify forms
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(netlifyData).toString()
-    }).catch(function(){});
-
-    // 2. Send welcome email via Netlify serverless function
-    fetch('/.netlify/functions/send-welcome', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name || 'Collective Member', email: email })
-    }).catch(function(){});
-
-    // 4. Show confirmation message
-    form.innerHTML = '<p style="color:var(--color-primary);font-weight:600;font-size:var(--text-lg);text-align:center;">You\'re in. Welcome to The Collective.</p><p style="color:var(--color-text-muted);font-size:var(--text-sm);text-align:center;margin-top:0.5rem;">We\'ll be in touch the moment we launch in Ontario &amp; British Columbia.</p>';
-  });
-})();
-</script> 
-          <p class="collective-note">Launching Fall 2026 · Ontario &amp; British Columbia first · National expansion to follow</p>
+        <div class="cf-collective-card reveal">
+          <p class="cf-label cf-label--light">Launching Q1 2027</p>
+          <h2 class="cf-title cf-title--light" id="collective-title">Be first in line <em>for your care</em></h2>
+          <p class="cf-collective-desc">Join The Collective and tell us your main concern. We'll let you know the moment assessments open in Ontario &amp; British Columbia. No obligation. No spam.</p>
+          <form class="cf-form" name="collective" netlify netlify-honeypot="bot-field" aria-label="Collective signup" id="collective-form">
+            <input type="hidden" name="form-name" value="collective" />
+            <p class="bot-field" style="display:none;"><label>Do not fill this out: <input name="bot-field" /></label></p>
+            <label class="cf-field">
+              <span>Your main concern</span>
+              <select name="concern" id="field-concern">
+                <option value="">Choose a concern (optional)</option>
+                <option value="Hormonal skin changes">Hormonal skin changes</option>
+                <option value="Fine lines & texture">Fine lines &amp; texture</option>
+                <option value="Adult & hormonal acne">Adult &amp; hormonal acne</option>
+                <option value="Melasma & pigmentation">Melasma &amp; pigmentation</option>
+                <option value="Rosacea & redness">Rosacea &amp; redness</option>
+                <option value="Intimate wellness">Intimate wellness</option>
+                <option value="Hair thinning">Hair thinning (coming later)</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </label>
+            <label class="cf-field">
+              <span>First name (optional)</span>
+              <input type="text" name="name" id="field-name" autocomplete="given-name" placeholder="What should we call you?" />
+            </label>
+            <label class="cf-field">
+              <span>Email address</span>
+              <input type="email" name="email" id="field-email" required autocomplete="email" placeholder="you@example.com" />
+            </label>
+            <button type="submit" class="btn cf-btn-gold">Join The Collective</button>
+          </form>
+          <p class="cf-collective-note">Ontario &amp; British Columbia first · National expansion to follow</p>
         </div>
       </div>
     </section>
 
   </main>
+
+  <!-- ═══ CONCERN DETAIL DIALOG ═══ -->
+  <dialog class="cf-dialog" id="concern-dialog" aria-labelledby="dlg-title">
+    <div class="cf-dialog-inner">
+      <button type="button" class="cf-dialog-close" aria-label="Close" data-close>&times;</button>
+      <img class="cf-dialog-img" id="dlg-img" src="" alt="" />
+      <div class="cf-dialog-body">
+        <p class="cf-label" id="dlg-label">Concern</p>
+        <h2 class="cf-dialog-title" id="dlg-title"></h2>
+        <p class="cf-dialog-intro" id="dlg-intro"></p>
+        <h3>What you might be noticing</h3>
+        <ul id="dlg-signs" role="list"></ul>
+        <h3>How your clinician may approach it</h3>
+        <p id="dlg-approach"></p>
+        <div class="cf-dialog-actions">
+          <button type="button" class="btn btn-primary" id="dlg-start">Start with this concern</button>
+          <button type="button" class="btn btn-outline" data-close>Keep browsing</button>
+        </div>
+        <p class="cf-fineprint">Educational information only, not medical advice. Treatment is prescribed only if your clinician determines it is appropriate for you.</p>
+      </div>
+    </div>
+  </dialog>
 
   <!-- ═══════════════════════════════════════════════
        FOOTER
@@ -449,7 +296,7 @@
 
         <div class="footer-brand">
           <p class="footer-brand-name">RevelleCare</p>
-          <p class="footer-tagline">Personalized prescription skincare medicine for women — at every age, every stage. Launching Fall 2026 in Ontario &amp; British Columbia.</p>
+          <p class="footer-tagline">Personalized prescription skincare medicine for women — at every age, every stage. Launching Q1 2027 in Ontario &amp; British Columbia.</p>
           <a href="mailto:hello@revellecare.com" style="font-size:var(--text-sm);color:var(--color-primary);font-weight:500;">hello@revellecare.com</a>
         </div>
 
@@ -459,9 +306,11 @@
             <li><a href="science.html">The Science</a></li>
         <li><a href="education.html">Education</a></li>
           <li><a href="collective.html">The Collective</a></li>
-            <li><a href="products.html">Treatment Areas</a></li>
+            <li><a href="#concerns">Shop by Concern</a></li>
             <li><a href="clinicians.html">Our Clinicians</a></li>
             <li><a href="pharmacy.html">Pharmacy Network</a></li>
+            <li><a href="sab.html">Scientific Advisory Board</a></li>
+            <li><a href="faq.html">FAQ</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#about">About</a></li>
           </ul>
@@ -510,41 +359,7 @@
     </div>
   </footer>
 
-  <!-- Education grid styles -->
-  <style>
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-6);
-    }
-    .edu-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8) var(--space-6);
-    }
-    .edu-icon {
-      color: var(--color-primary);
-      margin-bottom: var(--space-5);
-    }
-    .edu-title {
-      font-family: var(--font-display);
-      font-size: var(--text-lg);
-      font-weight: 400;
-      color: var(--color-text);
-      margin-bottom: var(--space-3);
-    }
-    .edu-desc {
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      line-height: 1.7;
-      max-width: none;
-    }
-    @media (max-width: 768px) {
-      .edu-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-
   <script src="main.js"></script>
+  <script src="home-concern.js"></script>
 </body>
 </html>
