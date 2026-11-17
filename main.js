@@ -32,39 +32,100 @@
 (function () {
   const header = document.querySelector('.site-header');
   if (!header) return;
-  let lastScroll = 0;
 
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y > 60) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+  // Teal hero directly under the header: use light logo/text until scrolled
+  const hero = document.querySelector('.page-hero--teal');
+  if (hero && hero.getBoundingClientRect().top + window.scrollY < 260) {
+    header.classList.add('on-dark');
+  }
+
+  const update = () => header.classList.toggle('scrolled', window.scrollY > 60);
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+
+// ── Pre-launch banner: keep the fixed header just below it ──
+(function () {
+  const banner = document.querySelector('.prelaunch-banner');
+  if (!banner) return;
+  const sync = () => document.documentElement.style.setProperty('--banner-height', banner.offsetHeight + 'px');
+  sync();
+  window.addEventListener('resize', sync);
+  window.addEventListener('load', sync);
+})();
+
+// ── Nav fit: overflow links into "More", or collapse to the drawer ──
+(function () {
+  const nav    = document.querySelector('.nav-menu');
+  const header = nav && nav.closest('header');
+  const inner  = header && header.querySelector('.nav-inner');
+  if (!header || !inner || !nav) return;
+
+  const more = document.createElement('li');
+  more.className = 'nav-more';
+  more.hidden = true;
+  more.innerHTML = '<button type="button" class="nav-more-btn" aria-expanded="false" aria-haspopup="true">More<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button><ul class="nav-more-menu" role="list"></ul>';
+  nav.appendChild(more);
+  const moreBtn  = more.querySelector('.nav-more-btn');
+  const moreList = more.querySelector('.nav-more-menu');
+
+  const setMore = (open) => { more.classList.toggle('open', open); moreBtn.setAttribute('aria-expanded', open); };
+  moreBtn.addEventListener('click', (e) => { e.stopPropagation(); setMore(!more.classList.contains('open')); });
+  document.addEventListener('click', (e) => { if (!more.contains(e.target)) setMore(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMore(false); });
+
+  const overflowing = () => inner.scrollWidth > inner.clientWidth + 1 || nav.scrollWidth > nav.clientWidth + 1;
+  const restore = () => {
+    while (moreList.firstElementChild) nav.insertBefore(moreList.firstElementChild, more);
+    more.hidden = true;
+    moreBtn.classList.remove('active');
+    setMore(false);
+  };
+
+  const fit = () => {
+    header.classList.remove('nav-compact');
+    restore();
+    let compact = window.innerWidth <= 900;
+    if (!compact && overflowing()) {
+      more.hidden = false;
+      const items = () => Array.from(nav.children).filter(li => li !== more);
+      while (overflowing() && items().length > 3) {
+        const list = items();
+        moreList.insertBefore(list[list.length - 1], moreList.firstElementChild);
+      }
+      if (overflowing()) { restore(); compact = true; }
+      moreBtn.classList.toggle('active', !!moreList.querySelector('a.active'));
     }
-    lastScroll = y;
-  }, { passive: true });
+    header.classList.toggle('nav-compact', compact);
+    if (!compact && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      header.classList.remove('menu-open');
+      document.body.style.overflow = '';
+    }
+  };
+  fit();
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('load', fit);
 })();
 
 // ── Mobile Menu ─────────────────────────────────────────────
 (function () {
   const toggle = document.querySelector('.nav-toggle');
+  const header = toggle && toggle.closest('header');
   const nav    = document.querySelector('.nav-menu');
   if (!toggle || !nav) return;
 
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
+  const setOpen = (open) => {
+    nav.classList.toggle('open', open);
+    if (header) header.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', open);
     document.body.style.overflow = open ? 'hidden' : '';
-  });
+  };
 
-  // Close on link click
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', false);
-      document.body.style.overflow = '';
-    });
-  });
+  toggle.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
 })();
 
 // ── Scroll Reveal ──────────────────────────────────────────

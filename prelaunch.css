@@ -177,3 +177,6 @@
   color: var(--color-text);
   font-weight: 600;
 }
+
+/* Dark mode: keep banner text readable */
+[data-theme="dark"] .prelaunch-banner { background: #0E4F4C; }

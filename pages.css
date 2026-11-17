@@ -289,3 +289,8 @@
   color: var(--color-primary);
   font-weight: 500;
 }
+
+/* Breadcrumb readability on teal heroes */
+.page-hero--teal .breadcrumb,
+.page-hero--teal .breadcrumb a { color: rgba(247, 241, 232, 0.85); }
+.page-hero--teal .breadcrumb a:hover { color: #FFFFFF; }
