@@ -18,7 +18,8 @@
   --color-text-muted:     #6B7370;
   --color-text-faint:     #A8ADA9;
   --color-text-inverse:   #F8F7F4;
-  --color-text-gold:      #8A7356;   /* Gold on light bg */
+  --color-text-gold:      #806333;   /* Antique brass on light surfaces */
+  --color-text-on-teal:   #F5EFE3;   /* Warm ivory on deep teal */
 
   /* ── Brand Primary — Deep Teal ───────────── */
   --color-primary:        #0E6B68;
@@ -31,7 +32,7 @@
   --color-gold:           #C9B89A;
   --color-gold-dark:      #A89578;
   --color-gold-light:     #EDE5D8;
-  --color-gold-deep:      #7A6045;   /* Rich gold for text */
+  --color-gold-deep:      #806333;   /* Antique brass for text */
 
   /* ── Semantic ────────────────────────────── */
   --color-success:        #2D7A5F;
@@ -105,7 +106,7 @@
   --color-text-muted:     #7A8A82;
   --color-text-faint:     #4A5A52;
   --color-text-inverse:   #111714;
-  --color-text-gold:      #C9B89A;
+  --color-text-gold:      #F5EFE3;
 
   --color-primary:        #3D9E9A;
   --color-primary-hover:  #52B8B4;
@@ -116,7 +117,7 @@
   --color-gold:           #C9B89A;
   --color-gold-dark:      #A89578;
   --color-gold-light:     #2A2218;
-  --color-gold-deep:      #D4C4A8;
+  --color-gold-deep:      #F5EFE3;
 
   --shadow-sm:  0 1px 3px rgba(0,0,0,0.3);
   --shadow-md:  0 4px 16px rgba(0,0,0,0.4);

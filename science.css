@@ -244,7 +244,7 @@
   content: '–';
   position: absolute;
   left: 0;
-  color: var(--color-gold);
+  color: var(--color-text-gold);
 }
 
 .mech-card-ref {

@@ -35,7 +35,7 @@
 }
 .meno-section h2 em {
   font-style: italic;
-  color: var(--color-gold, #C9B89A);
+  color: var(--color-text-gold);
 }
 .btn {
   display: inline-block;
@@ -170,7 +170,7 @@
 }
 .symptom-icon {
   font-size: 1.2rem;
-  color: var(--color-gold, #C9B89A);
+  color: var(--color-text-gold);
   margin-bottom: 10px;
 }
 .symptom-card h3 {
@@ -241,7 +241,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-gold, #C9B89A);
+  color: var(--color-text-on-teal);
   margin-bottom: 1rem;
 }
 .offer-card p {
@@ -256,7 +256,7 @@
   font-family: 'Jost', sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
-  color: var(--color-gold, #C9B89A);
+  color: var(--color-text-on-teal);
   text-decoration: none;
   letter-spacing: 0.04em;
 }
@@ -291,7 +291,7 @@
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 2rem;
   font-weight: 300;
-  color: var(--color-gold, #C9B89A);
+  color: var(--color-text-gold);
   line-height: 1;
   padding-top: 4px;
 }
@@ -367,7 +367,7 @@
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-gold, #C9B89A);
+  color: var(--color-text-gold);
   font-style: normal;
 }
 
@@ -434,7 +434,7 @@
   color: #fff;
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
-.meno-final-cta h2 em { color: var(--color-gold, #C9B89A); font-style: italic; }
+.meno-final-cta h2 em { color: var(--color-text-on-teal); font-style: italic; }
 .meno-final-cta p {
   font-family: 'Jost', sans-serif;
   font-size: 1rem;
@@ -507,7 +507,7 @@
   text-decoration: none;
   letter-spacing: 0.06em;
 }
-.footer-nav a:hover { color: var(--color-gold, #C9B89A); }
+.footer-nav a:hover { color: var(--color-text-on-teal); }
 .footer-legal {
   font-family: 'Jost', sans-serif;
   font-size: 0.72rem;

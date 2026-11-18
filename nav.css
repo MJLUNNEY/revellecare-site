@@ -315,9 +315,9 @@ header .nav-menu .nav-more-menu a.active { color: var(--color-primary); backgrou
 
 /* ── Teal-hero pages: light text until the header turns solid ── */
 .site-header.on-dark:not(.scrolled):not(.menu-open) .nav-toggle,
-.site-header.on-dark:not(.scrolled):not(.menu-open) .theme-toggle { color: #F7F1E8; }
+.site-header.on-dark:not(.scrolled):not(.menu-open) .theme-toggle { color: var(--color-text-on-teal); }
 .site-header.on-dark:not(.scrolled):not(.nav-compact) .nav-menu > li > a,
-.site-header.on-dark:not(.scrolled):not(.nav-compact) .nav-more-btn { color: #F7F1E8; }
+.site-header.on-dark:not(.scrolled):not(.nav-compact) .nav-more-btn { color: var(--color-text-on-teal); }
 .site-header.on-dark:not(.scrolled):not(.nav-compact) .nav-menu > li > a:hover,
 .site-header.on-dark:not(.scrolled):not(.nav-compact) .nav-menu > li > a.active,
 .site-header.on-dark:not(.scrolled):not(.nav-compact) .nav-more-btn:hover,

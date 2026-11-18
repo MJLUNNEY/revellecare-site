@@ -12,11 +12,11 @@
 }
 
 .page-hero--teal {
-  background: var(--color-primary);
+  background: #0E6B68;
 }
 
 .page-hero--teal .page-hero-label {
-  color: rgba(255,255,255,0.72);
+  color: var(--color-text-on-teal);
 }
 
 .page-hero--teal .page-hero-title {
@@ -24,11 +24,11 @@
 }
 
 .page-hero--teal .page-hero-title em {
-  color: var(--color-gold);
+  color: var(--color-text-on-teal);
 }
 
 .page-hero--teal .page-hero-desc {
-  color: rgba(255,255,255,0.72);
+  color: var(--color-text-on-teal);
 }
 
 .page-hero-label {
@@ -104,6 +104,20 @@
 
 .breadcrumb-sep {
   opacity: 0.4;
+}
+
+.page-hero--teal .breadcrumb,
+.page-hero--teal .breadcrumb a {
+  color: var(--color-text-on-teal);
+}
+
+.page-hero--teal .breadcrumb-sep {
+  opacity: 1;
+}
+
+.page-hero--teal .breadcrumb a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 /* ── Page Nav Pills ────────────────────────────────────────── */
@@ -289,8 +303,3 @@
   color: var(--color-primary);
   font-weight: 500;
 }
-
-/* Breadcrumb readability on teal heroes */
-.page-hero--teal .breadcrumb,
-.page-hero--teal .breadcrumb a { color: rgba(247, 241, 232, 0.85); }
-.page-hero--teal .breadcrumb a:hover { color: #FFFFFF; }

@@ -130,7 +130,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #B5895A;
+  color: var(--color-text-gold);
   margin-bottom: var(--space-3);
 }
 

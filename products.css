@@ -362,7 +362,7 @@
 
 .protocol-divider-icon {
   font-size: var(--text-xl);
-  color: var(--color-gold);
+  color: var(--color-text-gold);
   line-height: 1;
 }
 
@@ -407,7 +407,7 @@
 }
 
 .pricing-card--feature .pricing-features li::before {
-  color: var(--color-gold);
+  color: var(--color-text-on-teal);
 }
 
 .pricing-card-header {
